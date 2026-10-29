@@ -2310,26 +2310,42 @@
     .design-thumb-box {
       position: relative;
       width: 100%;
-      height: 280px;
-      background: #09070f;
+      height: 290px;
+      background: radial-gradient(circle at 50% 35%, rgba(32, 22, 38, 0.95) 0%, rgba(9, 7, 15, 0.98) 100%);
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 14px 18px;
+      box-sizing: border-box;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
       z-index: 2;
     }
 
+    @media (max-width: 600px) {
+      .design-thumb-box {
+        height: 240px;
+        padding: 10px 12px;
+      }
+    }
+
     .design-thumb-img {
-      width: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       object-position: center;
       display: block;
-      transition: transform .35s ease;
+      margin: 0 auto;
+      border-radius: 10px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.65), 0 0 1px rgba(255, 255, 255, 0.15);
+      transition: transform .32s ease, box-shadow .32s ease;
     }
 
     .design-card-item:hover .design-thumb-img {
-      transform: scale(1.04);
+      transform: scale(1.035);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.8), 0 0 18px rgba(236, 72, 153, 0.28);
     }
 
     .design-zoom-overlay {
@@ -2554,199 +2570,659 @@
       flex-wrap: wrap;
     }
 
-    /* PROJECTS SECTION */
-    .project-filters {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 40px;
+    /* AI ENGINEERING SERVICE SHOWCASE (SERVICE 04) - TRANSPARENT GLASS */
+    .service-card.ai-service {
+      grid-column: 1 / -1;
+      background: rgba(10, 18, 30, 0.28);
+      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), 0 0 45px rgba(56, 189, 248, 0.12);
+      gap: 24px;
+      padding: 36px 40px;
+      position: relative;
     }
 
-    .filter-btn {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      color: var(--ink-muted);
-      padding: 8px 18px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 500;
+    @media (max-width: 768px) {
+      .service-card.ai-service {
+        padding: 26px 20px;
+      }
+    }
+
+    .ai-flagship-layout {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    @media (max-width: 1024px) {
+      .ai-flagship-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+    }
+
+    /* Left side photo wrapper */
+    .ai-photo-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      background: rgba(8, 14, 24, 0.35);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 35px rgba(56, 189, 248, 0.16);
       cursor: pointer;
-      transition: all .2s ease;
-      font-family: inherit;
+      transition: all .32s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
     }
 
-    .filter-btn:hover,
-    .filter-btn.active {
-      background: var(--white-btn);
-      color: var(--btn-ink);
-      border-color: #fff;
+    .ai-photo-card:hover {
+      border-color: rgba(56, 189, 248, 0.75);
+      transform: translateY(-4px);
+      box-shadow: 0 28px 65px rgba(0, 0, 0, 0.85), 0 0 50px rgba(56, 189, 248, 0.32);
+    }
+
+    .ai-photo-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 490px;
+      background: #030712;
+      overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+      .ai-photo-img-wrap {
+        height: 360px;
+      }
+    }
+
+    .ai-photo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      transition: transform .35s ease;
+    }
+
+    .ai-photo-card:hover .ai-photo-img {
+      transform: scale(1.03);
+    }
+
+    .ai-photo-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(8, 14, 24, 0.82);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      color: #7dd3fc;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      letter-spacing: 0.04em;
+      z-index: 2;
+    }
+
+    .ai-photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(6, 12, 22, 0.6);
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: #fff;
+      font-size: 13.5px;
+      font-weight: 600;
+      transition: opacity .25s ease;
+      -webkit-backdrop-filter: blur(3px);
+      backdrop-filter: blur(3px);
+      z-index: 3;
+    }
+
+    .ai-photo-card:hover .ai-photo-overlay {
+      opacity: 1;
+    }
+
+    .ai-photo-caption {
+      padding: 13px 18px;
+      background: rgba(8, 14, 24, 0.55);
+      border-top: 1px solid rgba(56, 189, 248, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12.5px;
+      color: #94a3b8;
+    }
+
+    /* Right side content & clusters - Transparent glass */
+    .ai-content-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .ai-clusters-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    .ai-cluster-card {
+      background: rgba(12, 18, 30, 0.38);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(56, 189, 248, 0.22);
+      border-radius: 16px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: all .25s ease;
+    }
+
+    .ai-cluster-card:hover {
+      background: rgba(56, 189, 248, 0.08);
+      border-color: rgba(56, 189, 248, 0.45);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 20px rgba(56, 189, 248, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .ai-cluster-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .ai-cluster-title-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .ai-cluster-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #38bdf8;
+      flex-shrink: 0;
+    }
+
+    .ai-cluster-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #f0f9ff;
+      margin: 0;
+      letter-spacing: -0.01em;
+    }
+
+    .ai-cluster-counter {
+      font-size: 11px;
+      font-weight: 600;
+      color: #7dd3fc;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+
+    .ai-cluster-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .ai-tech-pill {
+      font-size: 12px;
+      font-weight: 500;
+      color: #e0f2fe;
+      background: rgba(56, 189, 248, 0.07);
+      border: 1px solid rgba(56, 189, 248, 0.22);
+      padding: 5px 12px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all .2s ease;
+      cursor: default;
+    }
+
+    .ai-tech-pill:hover {
+      background: rgba(56, 189, 248, 0.22);
+      border-color: #38bdf8;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
+    }
+
+    .ai-tech-pill.highlight {
+      background: rgba(56, 189, 248, 0.14);
+      border-color: rgba(56, 189, 248, 0.4);
+      color: #bae6fd;
+      font-weight: 600;
+    }
+
+    /* PROJECTS SECTION */
+    .projects-preview-note {
+      max-width: 820px;
+      margin: 0 auto 36px;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 16px;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    .projects-preview-note .note-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: rgba(56, 189, 248, 0.16);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #38bdf8;
+      flex-shrink: 0;
+    }
+
+    .projects-preview-note .note-text {
+      font-size: 13.5px;
+      color: #e0f2fe;
+      line-height: 1.5;
+    }
+
+    .projects-preview-note .note-text strong {
+      color: #fff;
     }
 
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-      gap: 28px;
+      gap: 32px;
     }
 
+    @media (max-width: 768px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+
+    /* Individual standalone project card (no global transparent wrapper) */
     .project-card {
+      background: rgba(18, 18, 24, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 22px;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       height: 100%;
-      border-radius: 24px;
-      overflow: hidden;
-      background: var(--panel-card);
-      border: 1px solid var(--glass-line);
       -webkit-backdrop-filter: blur(20px);
       backdrop-filter: blur(20px);
-      transition: all .25s ease;
+      transition: all .3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+      position: relative;
     }
 
     .project-card:hover {
-      border-color: rgba(167, 139, 250, 0.35);
+      border-color: rgba(167, 139, 250, 0.4);
       transform: translateY(-6px);
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(167, 139, 250, 0.1);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65), 0 0 35px rgba(167, 139, 250, 0.12);
     }
 
-    .project-preview {
-      height: 185px;
+    .project-media-wrap {
       position: relative;
-      background: linear-gradient(135deg, #1b162a 0%, #0d0d14 100%);
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      width: 100%;
+      height: 280px;
+      background: radial-gradient(circle at 50% 35%, rgba(30, 27, 46, 0.95) 0%, rgba(9, 10, 16, 0.98) 100%);
       overflow: hidden;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 18px;
+      box-sizing: border-box;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
-    .project-preview::before {
-      content: "";
+    @media (max-width: 600px) {
+      .project-media-wrap {
+        height: 240px;
+        padding: 10px 12px;
+      }
+    }
+
+    .project-slide-img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      margin: 0 auto;
+      border-radius: 10px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.65), 0 0 1px rgba(255, 255, 255, 0.15);
+      transition: transform .32s ease, opacity .2s ease;
+    }
+
+    .project-card:hover .project-slide-img {
+      transform: scale(1.035);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.8), 0 0 18px rgba(167, 139, 250, 0.22);
+    }
+
+    /* Slider Arrows */
+    .project-slider-btn {
       position: absolute;
-      top: -40px;
-      right: -40px;
-      width: 140px;
-      height: 140px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(167, 139, 250, 0.25) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .preview-badge {
-      align-self: flex-start;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: #e2e8f0;
+      background: rgba(12, 14, 20, 0.82);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all .2s ease;
+      z-index: 5;
+      -webkit-backdrop-filter: blur(8px);
       backdrop-filter: blur(8px);
     }
 
-    .preview-symbol {
-      display: flex;
+    .project-slider-prev {
+      left: 10px;
+    }
+
+    .project-slider-next {
+      right: 10px;
+    }
+
+    .project-slider-btn:hover {
+      background: var(--white-btn);
+      color: var(--btn-ink);
+      border-color: #fff;
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+    }
+
+    .project-slide-indicator {
+      position: absolute;
+      bottom: 10px;
+      right: 12px;
+      background: rgba(10, 12, 18, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #e2e8f0;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 999px;
+      z-index: 5;
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      letter-spacing: 0.3px;
+    }
+
+    .project-zoom-overlay {
+      position: absolute;
+      top: 10px;
+      left: 12px;
+      background: rgba(10, 12, 18, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #cbd5e1;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 8px;
+      display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 5px;
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+      opacity: 0.8;
+      transition: opacity .2s ease;
+      pointer-events: none;
     }
 
-    .preview-glyph {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: rgba(167, 139, 250, 0.15);
-      border: 1px solid rgba(167, 139, 250, 0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .project-card:hover .project-zoom-overlay {
+      opacity: 1;
       color: #fff;
-      font-size: 18px;
-      font-weight: 700;
+      border-color: rgba(255, 255, 255, 0.35);
     }
 
-    .preview-title {
-      font-size: 21px;
-      font-weight: 700;
-      color: #fff;
-      margin: 0;
-      letter-spacing: -0.02em;
-    }
-
-    .project-content {
-      padding: 26px;
+    /* Content Area */
+    .project-info-wrap {
+      padding: 22px 24px 24px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
+      gap: 16px;
     }
 
-    .project-desc {
-      font-size: 14px;
-      color: #b0b0ba;
-      line-height: 1.6;
-      margin: 0 0 18px;
-      flex-grow: 1;
+    .project-title {
+      font-size: 19px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+      letter-spacing: -0.01em;
+      line-height: 1.35;
     }
 
-    .project-tech {
+    .project-tech-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 22px;
+      gap: 7px;
     }
 
-    .tech-tag {
+    .tech-pill-iconic {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       font-size: 11.5px;
+      font-weight: 600;
       color: #d1d5db;
       background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.09);
       padding: 4px 10px;
-      border-radius: 6px;
-      font-weight: 500;
+      border-radius: 8px;
+      transition: all .2s ease;
+      cursor: default;
     }
 
-    .project-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding-top: 16px;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .btn-detail {
-      flex: 1;
-      height: 38px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+    .tech-pill-iconic:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.25);
       color: #fff;
-      font-size: 13px;
-      gap: 6px;
+      transform: translateY(-1px);
     }
 
-    .btn-detail:hover {
-      background: rgba(255, 255, 255, 0.15);
-      border-color: rgba(255, 255, 255, 0.2);
+    .tech-pill-iconic svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
     }
 
-    .btn-icon-link {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      color: var(--ink-muted);
-      display: flex;
+    .tech-pill-mern {
+      color: #a78bfa;
+      background: rgba(167, 139, 250, 0.12);
+      border-color: rgba(167, 139, 250, 0.3);
+      font-weight: 700;
+    }
+
+    .btn-open-project {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      text-decoration: none;
-      transition: all .2s ease;
-    }
-
-    .btn-icon-link:hover {
+      gap: 8px;
+      width: 100%;
+      height: 44px;
+      border-radius: 12px;
       background: var(--white-btn);
       color: var(--btn-ink);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all .25s ease;
+      margin-top: auto;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-open-project:hover {
+      background: #ffffff;
+      color: #000;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255, 255, 255, 0.25);
+    }
+
+    /* Show All Projects Button & Modal */
+    .projects-show-all-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .btn-show-all-projects {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(167, 139, 250, 0.14);
+      border: 1px solid rgba(167, 139, 250, 0.4);
+      color: #ddd6fe;
+      padding: 13px 32px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .25s ease;
+      box-shadow: 0 8px 24px rgba(167, 139, 250, 0.15);
+      font-family: inherit;
+    }
+
+    .btn-show-all-projects:hover {
+      background: rgba(167, 139, 250, 0.28);
+      border-color: rgba(167, 139, 250, 0.7);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(167, 139, 250, 0.3);
+    }
+
+    .project-count-pill {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    /* ALL PROJECTS MODAL (FLOATING WINDOW) */
+    .projects-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 5, 10, 0.88);
+      -webkit-backdrop-filter: blur(24px);
+      backdrop-filter: blur(24px);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      transition: opacity .25s ease;
+    }
+
+    .projects-modal-backdrop.open {
+      display: flex;
+      opacity: 1;
+    }
+
+    .projects-modal-window {
+      background: linear-gradient(135deg, rgba(20, 18, 30, 0.98) 0%, rgba(12, 10, 20, 0.98) 100%);
+      border: 1px solid rgba(167, 139, 250, 0.35);
+      border-radius: 24px;
+      width: 100%;
+      max-width: 1160px;
+      max-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9), 0 0 50px rgba(167, 139, 250, 0.2);
+      overflow: hidden;
+      position: relative;
+      animation: modalPopIn 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .projects-modal-header {
+      padding: 24px 30px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(16, 14, 24, 0.85);
+    }
+
+    .projects-modal-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      margin: 0 0 6px;
+      letter-spacing: -0.01em;
+    }
+
+    .projects-modal-desc {
+      font-size: 14px;
+      color: #cbd5e1;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .projects-modal-body {
+      padding: 24px 30px;
+      overflow-y: auto;
+      max-height: calc(88vh - 170px);
+    }
+
+    .projects-modal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .projects-modal-footer {
+      padding: 16px 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(14, 12, 22, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
     }
 
     /* LOCATION SECTION */
@@ -2758,9 +3234,16 @@
       -webkit-backdrop-filter: blur(20px);
       backdrop-filter: blur(20px);
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 40px;
-      align-items: center;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    @media (max-width: 1024px) {
+      .location-box {
+        grid-template-columns: 1fr;
+        padding: 30px 24px;
+      }
     }
 
     .location-info h3 {
@@ -2800,6 +3283,12 @@
       gap: 16px;
     }
 
+    @media (max-width: 600px) {
+      .location-meta-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .loc-stat {
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.06);
@@ -2822,33 +3311,15 @@
     }
 
     .location-card-visual {
-      background: linear-gradient(135deg, rgba(26, 20, 42, 0.7) 0%, rgba(13, 13, 20, 0.8) 100%);
-      border: 1px solid rgba(167, 139, 250, 0.25);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 20px;
       padding: 32px;
-      position: relative;
-      overflow: hidden;
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-    }
-
-    .radar-circle {
-      position: absolute;
-      top: -30px;
-      right: -30px;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      border: 1px dashed rgba(167, 139, 250, 0.3);
-      animation: spinRadar 30s linear infinite;
-      pointer-events: none;
-    }
-
-    @keyframes spinRadar {
-      from { transform: rotate(0deg); }
-      to   { transform: rotate(360deg); }
+      gap: 24px;
+      position: relative;
+      overflow: hidden;
     }
 
     .loc-pill-hub {
@@ -2858,43 +3329,43 @@
     }
 
     .loc-pin-icon {
-      width: 42px;
-      height: 42px;
+      width: 40px;
+      height: 40px;
       border-radius: 12px;
-      background: rgba(167, 139, 250, 0.2);
-      border: 1px solid rgba(167, 139, 250, 0.4);
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.35);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent);
+      color: #38bdf8;
       flex-shrink: 0;
     }
 
     .loc-hub-details h4 {
       margin: 0;
-      font-size: 18px;
+      font-size: 16px;
       color: #fff;
     }
 
     .loc-hub-details p {
       margin: 2px 0 0;
-      font-size: 13.5px;
+      font-size: 13px;
       color: #a0a0a8;
     }
 
     .loc-zones {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 16px;
+      padding-top: 12px;
     }
 
     .loc-zone-item {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-size: 13px;
+      font-size: 12.5px;
       color: #d1d5db;
     }
 
@@ -3091,7 +3562,7 @@
       border-top: 1px solid rgba(255, 255, 255, 0.08);
       padding: 40px 24px 60px;
       text-align: center;
-      background: rgba(0, 0, 0, 0.88);
+      background: rgba(0, 0, 0, 0.92);
       -webkit-backdrop-filter: blur(20px);
       backdrop-filter: blur(20px);
     }
@@ -4611,29 +5082,113 @@
       </div>
 
       <!-- 4. AI ENGINEERING -->
-      <div class="service-card">
-        <span class="service-badge badge-cyan">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-          Autonomous Systems &bull; Service 04
-        </span>
-        <div class="service-icon-box icon-cyan">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="4"/>
-          </svg>
-        </div>
-        <h3 class="service-title">AI Engineering</h3>
-        <p class="service-desc">
-          Building state-of-the-art intelligent systems, autonomous agent workflows, local RAG architectures with vector embeddings, and specialized LLM integrations.
-        </p>
-        <ul class="service-list">
-          <li>Agentic AI &amp; Autonomous Multi-Agent Workflows</li>
-          <li>Local RAG, Vector Databases &amp; Semantic Search</li>
-          <li>Prompt Engineering, Function Calling &amp; Fine-Tuning</li>
-          <li>LangChain, LangGraph &amp; MCP Integrations</li>
-        </ul>
-        <div class="service-status-pill">
-          <span class="pulse-dot cyan"></span>
-          <span>Content &amp; agentic pipelines coming soon</span>
+      <div class="service-card flagship-service ai-service" id="service-ai">
+        <div class="ai-flagship-layout">
+          <!-- Left Column: AI.jpeg Picture in Tech Frame -->
+          <div class="ai-photo-card" onclick="openCustomImageLightbox('/assets/aistudio/AI_893d4ecf.jpeg', 'AI Engineer — Building Intelligent Solutions', '<strong>AI Engineering</strong> &bull; Generative AI, Autonomous Agent Workflows &amp; LLM Architecture')" title="Click to view full image">
+            <div class="ai-photo-img-wrap">
+              <span class="ai-photo-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="4"/></svg>
+                Autonomous AI Systems
+              </span>
+              <img src="/assets/aistudio/AI_893d4ecf.jpeg" alt="AI Engineer Building Intelligent Solutions" class="ai-photo-img" loading="lazy" />
+              <div class="ai-photo-overlay">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                <span>Click to Expand Blueprint</span>
+              </div>
+            </div>
+            <div class="ai-photo-caption">
+              <span>Agentic Workflows &bull; LLMs &bull; Modern Stack</span>
+              <span style="color: #38bdf8; font-weight: 600;">Zoomable Preview ↗</span>
+            </div>
+          </div>
+
+          <!-- Right Column: Title, Description & Categorized Clusters -->
+          <div class="ai-content-wrap">
+            <div>
+              <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px;">
+                <span class="service-badge badge-cyan" style="margin-bottom: 0;">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                  Autonomous Systems &bull; Service 04
+                </span>
+                <span class="tech-cluster-badge" style="background: rgba(56, 189, 248, 0.12); color: #7dd3fc; border: 1px solid rgba(56, 189, 248, 0.3);">Enterprise AI</span>
+              </div>
+              <h3 class="service-title" style="font-size: 28px; margin: 0 0 8px;">AI Engineering</h3>
+              <p class="service-desc" style="font-size: 15px; margin: 0 0 16px; line-height: 1.6; color: #cbd5e1;">
+                Designing and deploying enterprise-grade generative AI architectures, autonomous multi-agent pipelines, localized RAG engines with high-dimensional vector embeddings, and robust containerized production infrastructure.
+              </p>
+            </div>
+
+            <div class="ai-clusters-container">
+              <!-- Cluster 1: Generative AI & Agents -->
+              <div class="ai-cluster-card">
+                <div class="ai-cluster-header">
+                  <div class="ai-cluster-title-group">
+                    <div class="ai-cluster-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10H12V2z"/><path d="M12 2a10 10 0 0 1 10 10h-10V2z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </div>
+                    <h4 class="ai-cluster-title">Generative AI &amp; Agents</h4>
+                  </div>
+                  <span class="ai-cluster-counter">12 Core Technologies</span>
+                </div>
+                <div class="ai-cluster-tags">
+                  <span class="ai-tech-pill highlight">Generative AI</span>
+                  <span class="ai-tech-pill highlight">Agentic AI</span>
+                  <span class="ai-tech-pill highlight">AI Agents</span>
+                  <span class="ai-tech-pill">LLMs</span>
+                  <span class="ai-tech-pill">Prompt Engineering</span>
+                  <span class="ai-tech-pill">Fine-Tuning</span>
+                  <span class="ai-tech-pill">MCP</span>
+                  <span class="ai-tech-pill">RAG</span>
+                  <span class="ai-tech-pill">Embedding</span>
+                  <span class="ai-tech-pill">Chunking</span>
+                  <span class="ai-tech-pill">Semantic Search</span>
+                  <span class="ai-tech-pill">Tokenization</span>
+                </div>
+              </div>
+
+              <!-- Cluster 2: Frameworks & Automation -->
+              <div class="ai-cluster-card">
+                <div class="ai-cluster-header">
+                  <div class="ai-cluster-title-group">
+                    <div class="ai-cluster-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="8" height="8" x="2" y="2" rx="2"/><rect width="8" height="8" x="14" y="2" rx="2"/><rect width="8" height="8" x="8" y="14" rx="2"/><path d="M6 10v2a2 2 0 0 0 2 2h4"/><path d="M18 10v2a2 2 0 0 1-2 2h-4"/></svg>
+                    </div>
+                    <h4 class="ai-cluster-title">Frameworks &amp; Automation</h4>
+                  </div>
+                  <span class="ai-cluster-counter">8 Orchestration Tools</span>
+                </div>
+                <div class="ai-cluster-tags">
+                  <span class="ai-tech-pill highlight">LangChain</span>
+                  <span class="ai-tech-pill highlight">LangGraph</span>
+                  <span class="ai-tech-pill">LangSmith</span>
+                  <span class="ai-tech-pill">LlamaIndex</span>
+                  <span class="ai-tech-pill highlight">AI Automation</span>
+                  <span class="ai-tech-pill">n8n</span>
+                  <span class="ai-tech-pill">Make</span>
+                  <span class="ai-tech-pill">Zapier</span>
+                </div>
+              </div>
+
+              <!-- Cluster 3: Deployment -->
+              <div class="ai-cluster-card">
+                <div class="ai-cluster-header">
+                  <div class="ai-cluster-title-group">
+                    <div class="ai-cluster-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><line x1="6" x2="6.01" y1="16" y2="16"/><line x1="10" x2="10.01" y1="16" y2="16"/></svg>
+                    </div>
+                    <h4 class="ai-cluster-title">Deployment</h4>
+                  </div>
+                  <span class="ai-cluster-counter">Production Ops</span>
+                </div>
+                <div class="ai-cluster-tags">
+                  <span class="ai-tech-pill highlight">Docker</span>
+                  <span class="ai-tech-pill highlight">Kubernetes</span>
+                  <span class="ai-tech-pill highlight">CI/CD</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -4644,212 +5199,277 @@
        ======================================================== -->
   <section class="section-wrap" id="projects">
     <div class="section-header">
-      <span class="section-eyebrow">Portfolio</span>
-      <h2 class="section-title">Selected Projects</h2>
+      <span class="section-eyebrow">Engineering Portfolio</span>
+      <h2 class="section-title">My Projects</h2>
       <p class="section-desc">
-        A showcase of real-world applications, engineering internships, AI systems, and scalable full-stack software.
+        A showcase of live full-stack web applications, mobile architectures, administrative dashboards, and bespoke digital platforms.
       </p>
     </div>
 
-    <div class="project-filters">
-      <button class="filter-btn active" data-filter="all">All Projects</button>
-      <button class="filter-btn" data-filter="enterprise">Enterprise</button>
-      <button class="filter-btn" data-filter="ai">AI &amp; RAG</button>
-      <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
-      <button class="filter-btn" data-filter="automation">Automation</button>
+    <!-- Top Note: Front-end preview notice -->
+    <div class="projects-preview-note">
+      <div class="note-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      </div>
+      <div class="note-text">
+        <strong>Portfolio Notice:</strong> These projects are live front-end implementations built for demonstration and preview. Click <em>"Open Project"</em> on any card to test each live interactive application.
+      </div>
     </div>
 
     <div class="projects-grid" id="projectsGrid">
-      <!-- Project 1: SONELGAZ -->
-      <article class="project-card" data-category="enterprise fullstack">
-        <div class="project-preview">
-          <span class="preview-badge">SONELGAZ &bull; Enterprise Production</span>
-          <div class="preview-symbol">
-            <div class="preview-glyph">SG</div>
-            <h3 class="preview-title">SONELGAZ Electricity Payments</h3>
-          </div>
+      <!-- Project 1: SONELGAZ Payment APP -->
+      <article class="project-card" id="projectCard1" data-current-idx="0" data-images='["/assets/aistudio/payapp1_ee0dad9e.png", "/assets/aistudio/payapp2_6152dd0a.png"]' data-title="SONELGAZ Payment APP" data-subtitle="MERN Stack • React Native, Node.js, Express, MongoDB">
+        <div class="project-media-wrap" onclick="openProjectImage('projectCard1')">
+          <img src="/assets/aistudio/payapp1_ee0dad9e.png" alt="SONELGAZ Payment APP" class="project-slide-img" loading="lazy" />
+          <button type="button" class="project-slider-btn project-slider-prev" onclick="switchProjectSlide('projectCard1', -1, event)" aria-label="Previous image" title="Previous preview">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button type="button" class="project-slider-btn project-slider-next" onclick="switchProjectSlide('projectCard1', 1, event)" aria-label="Next image" title="Next preview (Click Right)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <span class="project-slide-indicator">
+            <span class="slide-count">1 / 2</span>
+          </span>
+          <span class="project-zoom-overlay">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            Enlarge
+          </span>
         </div>
-        <div class="project-content">
-          <p class="project-desc">
-            Full-stack MERN mobile application developed for SONELGAZ electricity billing and payments. Features JWT authentication, role management, push notifications, and automated multilingual PDF invoicing (EN, FR, AR).
-          </p>
-          <div class="project-tech">
-            <span class="tech-tag">MongoDB</span>
-            <span class="tech-tag">Express.js</span>
-            <span class="tech-tag">React Native</span>
-            <span class="tech-tag">Node.js</span>
-            <span class="tech-tag">JWT</span>
-            <span class="tech-tag">UML</span>
+        <div class="project-info-wrap">
+          <h3 class="project-title">SONELGAZ Payment APP</h3>
+          <div class="project-tech-list">
+            <span class="tech-pill-iconic tech-pill-mern">MERN Stack</span>
+            <span class="tech-pill-iconic" title="MongoDB">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 2s-6 6.5-6 12.5C6 19 8.5 22 12 22s6-3 6-7.5C18 8.5 12 2 12 2z" fill="#47A248"/><path d="M12 2v20c3.5 0 6-3 6-7.5C18 8.5 12 2 12 2z" fill="#4CAF50"/><path d="M12 5v15" stroke="#fff" stroke-width="1.2"/></svg>
+              MongoDB
+            </span>
+            <span class="tech-pill-iconic" title="ExpressJS">
+              <svg viewBox="0 0 24 24" fill="none"><rect width="22" height="16" x="1" y="4" rx="3" fill="#334155"/><text x="12" y="15.5" font-family="system-ui, sans-serif" font-weight="800" font-size="11" fill="#fff" text-anchor="middle">ex</text></svg>
+              ExpressJS
+            </span>
+            <span class="tech-pill-iconic" title="React Native">
+              <svg viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.8" transform="rotate(30 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.8" transform="rotate(90 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.8" transform="rotate(150 12 12)"/><circle cx="12" cy="12" r="2" fill="#61DAFB"/></svg>
+              React Native
+            </span>
+            <span class="tech-pill-iconic" title="Node JS">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l9 5.2v10.4L12 22.8 3 17.6V7.2L12 2z" fill="#68A063"/><path d="M12 4.5l6.8 4v7.9L12 20.3l-6.8-3.9V8.5L12 4.5z" fill="#3E863D"/><circle cx="12" cy="12" r="3.2" fill="#fff"/></svg>
+              Node JS
+            </span>
           </div>
-          <div class="project-actions">
-            <button class="btn btn-detail" onclick="openProjectModal('sonelgaz')">
-              Deep Dive
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6 2.5 9.5 6 6 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <a href="https://github.com/Hichem08" target="_blank" rel="noopener noreferrer" class="btn-icon-link" aria-label="View on GitHub">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 2: Local RAG Knowledge Engine -->
-      <article class="project-card" data-category="ai">
-        <div class="project-preview">
-          <span class="preview-badge">Generative AI &bull; Agentic</span>
-          <div class="preview-symbol">
-            <div class="preview-glyph">RG</div>
-            <h3 class="preview-title">Local RAG Knowledge Engine</h3>
-          </div>
-        </div>
-        <div class="project-content">
-          <p class="project-desc">
-            Autonomous private document search and question-answering system using LangChain, LangGraph, and VectorDB. Integrates semantic embeddings and local LLM execution for privacy-first enterprise intelligence.
-          </p>
-          <div class="project-tech">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">LangChain</span>
-            <span class="tech-tag">LangGraph</span>
-            <span class="tech-tag">VectorDB</span>
-            <span class="tech-tag">MCP</span>
-          </div>
-          <div class="project-actions">
-            <button class="btn btn-detail" onclick="openProjectModal('rag')">
-              Deep Dive
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6 2.5 9.5 6 6 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <a href="https://github.com/Hichem08" target="_blank" rel="noopener noreferrer" class="btn-icon-link" aria-label="View on GitHub">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            </a>
-          </div>
+          <a href="https://sonelgaz-pay-app.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-open-project" title="Open SONELGAZ Payment APP in new tab">
+            <span>Open Project</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
         </div>
       </article>
 
-      <!-- Project 3: Automated Workflow Mesh -->
-      <article class="project-card" data-category="automation">
-        <div class="project-preview">
-          <span class="preview-badge">Automation &bull; Integrations</span>
-          <div class="preview-symbol">
-            <div class="preview-glyph">N8</div>
-            <h3 class="preview-title">Omni-Channel n8n Mesh</h3>
-          </div>
+      <!-- Project 2: Furniture Showroom -->
+      <article class="project-card" id="projectCard2" data-current-idx="0" data-images='["/assets/aistudio/furniture1_0ece5b15.png", "/assets/aistudio/furniture2_f16a458e.png"]' data-title="Furniture Showroom" data-subtitle="HTML, CSS, JavaScript • E-Commerce & Interior Living">
+        <div class="project-media-wrap" onclick="openProjectImage('projectCard2')">
+          <img src="/assets/aistudio/furniture1_0ece5b15.png" alt="Furniture Showroom" class="project-slide-img" loading="lazy" />
+          <button type="button" class="project-slider-btn project-slider-prev" onclick="switchProjectSlide('projectCard2', -1, event)" aria-label="Previous image" title="Previous preview">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button type="button" class="project-slider-btn project-slider-next" onclick="switchProjectSlide('projectCard2', 1, event)" aria-label="Next image" title="Next preview (Click Right)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <span class="project-slide-indicator">
+            <span class="slide-count">1 / 2</span>
+          </span>
+          <span class="project-zoom-overlay">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            Enlarge
+          </span>
         </div>
-        <div class="project-content">
-          <p class="project-desc">
-            Multi-node automated workflow pipeline orchestrating CRM data, automatic email dispatching, webhook event streams, and AI-driven customer sentiment routing.
-          </p>
-          <div class="project-tech">
-            <span class="tech-tag">n8n</span>
-            <span class="tech-tag">Make</span>
-            <span class="tech-tag">Zapier</span>
-            <span class="tech-tag">Webhooks</span>
-            <span class="tech-tag">Supabase</span>
+        <div class="project-info-wrap">
+          <h3 class="project-title">Furniture Showroom</h3>
+          <div class="project-tech-list">
+            <span class="tech-pill-iconic" title="HTML">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 3l1.8 17.5L12 22l6.2-1.5L20 3H4z" fill="#E34F26"/><path d="M12 4.5v15.8l4.8-1.2 1.4-14.6H12z" fill="#EF652A"/><path d="M12 7.7H7.7l.3 3.3h4V7.7zm0 6.6H9.7l-.2-2.3H7.4l.4 4.5 4.2 1.1V14.3z" fill="#fff"/><path d="M12 7.7h4.3l-.4 4.4h-3.9v-4.4zm0 6.6h2.2l-.2 2.3-2 .5V14.3z" fill="#EBEBEB"/></svg>
+              HTML
+            </span>
+            <span class="tech-pill-iconic" title="CSS">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 3l1.8 17.5L12 22l6.2-1.5L20 3H4z" fill="#1572B6"/><path d="M12 4.5v15.8l4.8-1.2 1.4-14.6H12z" fill="#33A9DC"/><path d="M12 7.7H7.7l.3 3.3h4V7.7zm0 6.6H9.7l-.2-2.3H7.4l.4 4.5 4.2 1.1V14.3z" fill="#fff"/><path d="M12 7.7h4.3l-.4 4.4h-3.9v-4.4zm0 6.6h2.2l-.2 2.3-2 .5V14.3z" fill="#EBEBEB"/></svg>
+              CSS
+            </span>
+            <span class="tech-pill-iconic" title="Javascript">
+              <svg viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="4" fill="#F7DF1E"/><path d="M7 16.5c.5.8 1.2 1.3 2.1 1.3 1.1 0 1.8-.6 1.8-1.7V10H9.2v6.1c0 .5-.3.8-.8.8-.4 0-.7-.2-.9-.5l-.5.1zm7.5.1c.6.9 1.5 1.4 2.5 1.4 1.4 0 2.3-.8 2.3-2 0-1.3-.9-1.8-2.2-2.3-.9-.4-1.3-.7-1.3-1.3 0-.5.4-.9 1.1-.9.7 0 1.1.3 1.4.9l1.4-.8c-.6-1.1-1.5-1.6-2.7-1.6-1.4 0-2.3.9-2.3 2.1 0 1.2.8 1.8 2 2.3.9.4 1.5.7 1.5 1.4 0 .6-.5 1-1.3 1-.8 0-1.4-.4-1.8-1.1l-.6.3z" fill="#000"/></svg>
+              Javascript
+            </span>
           </div>
-          <div class="project-actions">
-            <button class="btn btn-detail" onclick="openProjectModal('automation')">
-              Deep Dive
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6 2.5 9.5 6 6 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <a href="https://github.com/Hichem08" target="_blank" rel="noopener noreferrer" class="btn-icon-link" aria-label="View on GitHub">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 4: Laravel & MySQL Portal -->
-      <article class="project-card" data-category="fullstack enterprise">
-        <div class="project-preview">
-          <span class="preview-badge">Web Architecture</span>
-          <div class="preview-symbol">
-            <div class="preview-glyph">LV</div>
-            <h3 class="preview-title">Laravel Enterprise Portal</h3>
-          </div>
-        </div>
-        <div class="project-content">
-          <p class="project-desc">
-            Scalable administrative portal engineered with Laravel, MySQL, and modern JavaScript. Includes Merise database modeling, role permissions, automated PDF reports, and real-time dashboard analytics.
-          </p>
-          <div class="project-tech">
-            <span class="tech-tag">PHP</span>
-            <span class="tech-tag">Laravel</span>
-            <span class="tech-tag">MySQL</span>
-            <span class="tech-tag">JavaScript</span>
-            <span class="tech-tag">Merise</span>
-          </div>
-          <div class="project-actions">
-            <button class="btn btn-detail" onclick="openProjectModal('laravel')">
-              Deep Dive
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6 2.5 9.5 6 6 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <a href="https://github.com/Hichem08" target="_blank" rel="noopener noreferrer" class="btn-icon-link" aria-label="View on GitHub">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            </a>
-          </div>
+          <a href="https://furniture-website-7zx.pages.dev/" target="_blank" rel="noopener noreferrer" class="btn-open-project" title="Open Furniture Showroom in new tab">
+            <span>Open Project</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
         </div>
       </article>
 
-      <!-- Project 5: PulseTrade Settlement Engine -->
-      <article class="project-card" data-category="enterprise fullstack">
-        <div class="project-preview">
-          <span class="preview-badge">FinTech &bull; Real-Time WebSockets</span>
-          <div class="preview-symbol">
-            <div class="preview-glyph">PT</div>
-            <h3 class="preview-title">PulseTrade Protocol</h3>
-          </div>
+      <!-- Project 3: SONELGAZ Dashboard -->
+      <article class="project-card" id="projectCard3" data-current-idx="0" data-images='["/assets/aistudio/dash1_8ca92373.png", "/assets/aistudio/dash2_1657049a.png"]' data-title="SONELGAZ Dashboard" data-subtitle="React JS, Vite, TailwindCSS, MySQL • Admin Intelligence">
+        <div class="project-media-wrap" onclick="openProjectImage('projectCard3')">
+          <img src="/assets/aistudio/dash1_8ca92373.png" alt="SONELGAZ Dashboard" class="project-slide-img" loading="lazy" />
+          <button type="button" class="project-slider-btn project-slider-prev" onclick="switchProjectSlide('projectCard3', -1, event)" aria-label="Previous image" title="Previous preview">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button type="button" class="project-slider-btn project-slider-next" onclick="switchProjectSlide('projectCard3', 1, event)" aria-label="Next image" title="Next preview (Click Right)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <span class="project-slide-indicator">
+            <span class="slide-count">1 / 2</span>
+          </span>
+          <span class="project-zoom-overlay">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            Enlarge
+          </span>
         </div>
-        <div class="project-content">
-          <p class="project-desc">
-            High-speed currency pairs and digital asset swap prototype with live order routing and balance updates.
-          </p>
-          <div class="project-tech">
-            <span class="tech-tag">React.js</span>
-            <span class="tech-tag">Node.js</span>
-            <span class="tech-tag">WebSockets</span>
-            <span class="tech-tag">MongoDB</span>
+        <div class="project-info-wrap">
+          <h3 class="project-title">SONELGAZ Dashboard</h3>
+          <div class="project-tech-list">
+            <span class="tech-pill-iconic" title="React JS">
+              <svg viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.8" transform="rotate(30 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.8" transform="rotate(90 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.8" transform="rotate(150 12 12)"/><circle cx="12" cy="12" r="2" fill="#61DAFB"/></svg>
+              React JS
+            </span>
+            <span class="tech-pill-iconic" title="Vite">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M21.5 4.5l-9.8 17.3a.6.6 0 0 1-1 0L2.5 4.5a.6.6 0 0 1 .6-.9l8.6 1.7a.6.6 0 0 0 .3 0l8.9-1.7a.6.6 0 0 1 .6.9z" fill="#646CFF"/><path d="M12.8 3.5L8.5 12h4.2l-1.5 6.5 5.5-9.5h-4.2l1.3-5.5z" fill="#FFD62E"/></svg>
+              Vite
+            </span>
+            <span class="tech-pill-iconic" title="TailwindCSS">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M6 12c.5-1.5 1.5-2.5 3-3 2.5-.8 3.5.5 5 0 1.2-.4 1.8-1.2 2-2.5-1 .5-2 1-3 1-2.5.8-3.5-.5-5 0-1.2.4-1.8 1.2-2 4.5zm-4 5c.5-1.5 1.5-2.5 3-3 2.5-.8 3.5.5 5 0 1.2-.4 1.8-1.2 2-2.5-1 .5-2 1-3 1-2.5.8-3.5-.5-5 0-1.2.4-1.8 1.2-2 4.5z" fill="#06B6D4"/></svg>
+              TailwindCSS
+            </span>
+            <span class="tech-pill-iconic" title="MySQL">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 6c0-2.2 3.6-4 8-4s8 1.8 8 4-3.6 4-8 4-8-1.8-8-4z" fill="#00758F"/><path d="M4 9c0 2.2 3.6 4 8 4s8-1.8 8-4v3c0 2.2-3.6 4-8 4s-8-1.8-8-4V9z" fill="#00758F" opacity="0.85"/><path d="M4 14c0 2.2 3.6 4 8 4s8-1.8 8-4v3c0 2.2-3.6 4-8 4s-8-1.8-8-4v-3z" fill="#F29111"/></svg>
+              MySQL
+            </span>
           </div>
-          <div class="project-actions">
-            <button class="btn btn-detail" onclick="openProjectModal('pulsetrade')">
-              Deep Dive
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6 2.5 9.5 6 6 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <a href="https://github.com/Hichem08" target="_blank" rel="noopener noreferrer" class="btn-icon-link" aria-label="View on GitHub">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            </a>
-          </div>
+          <a href="https://dashboard-ad-tr.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-open-project" title="Open SONELGAZ Dashboard in new tab">
+            <span>Open Project</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
         </div>
       </article>
 
-      <!-- Project 6: Creative Studio & Brand Suite -->
-      <article class="project-card" data-category="fullstack">
-        <div class="project-preview">
-          <span class="preview-badge">Graphic Design &bull; Identity</span>
-          <div class="preview-symbol">
-            <div class="preview-glyph">CD</div>
-            <h3 class="preview-title">Digital Design Systems</h3>
-          </div>
+      <!-- Project 4: Kitchen Showroom -->
+      <article class="project-card" id="projectCard4" data-current-idx="0" data-images='["/assets/aistudio/kitchen1_bf78350e.png", "/assets/aistudio/kitchen2_579915d7.png"]' data-title="Kitchen Showroom" data-subtitle="HTML, CSS, JavaScript • Luxury Architectural Showcase">
+        <div class="project-media-wrap" onclick="openProjectImage('projectCard4')">
+          <img src="/assets/aistudio/kitchen1_bf78350e.png" alt="Kitchen Showroom" class="project-slide-img" loading="lazy" />
+          <button type="button" class="project-slider-btn project-slider-prev" onclick="switchProjectSlide('projectCard4', -1, event)" aria-label="Previous image" title="Previous preview">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button type="button" class="project-slider-btn project-slider-next" onclick="switchProjectSlide('projectCard4', 1, event)" aria-label="Next image" title="Next preview (Click Right)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <span class="project-slide-indicator">
+            <span class="slide-count">1 / 2</span>
+          </span>
+          <span class="project-zoom-overlay">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            Enlarge
+          </span>
         </div>
-        <div class="project-content">
-          <p class="project-desc">
-            Complete visual identity and design system suite created with Adobe Photoshop, Illustrator, and Canva. Combines typography discipline, asset vectorization, and brand guides.
-          </p>
-          <div class="project-tech">
-            <span class="tech-tag">Photoshop</span>
-            <span class="tech-tag">Illustrator</span>
-            <span class="tech-tag">Canva</span>
-            <span class="tech-tag">CSS3</span>
+        <div class="project-info-wrap">
+          <h3 class="project-title">Kitchen Showroom</h3>
+          <div class="project-tech-list">
+            <span class="tech-pill-iconic" title="HTML">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 3l1.8 17.5L12 22l6.2-1.5L20 3H4z" fill="#E34F26"/><path d="M12 4.5v15.8l4.8-1.2 1.4-14.6H12z" fill="#EF652A"/><path d="M12 7.7H7.7l.3 3.3h4V7.7zm0 6.6H9.7l-.2-2.3H7.4l.4 4.5 4.2 1.1V14.3z" fill="#fff"/><path d="M12 7.7h4.3l-.4 4.4h-3.9v-4.4zm0 6.6h2.2l-.2 2.3-2 .5V14.3z" fill="#EBEBEB"/></svg>
+              HTML
+            </span>
+            <span class="tech-pill-iconic" title="CSS">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 3l1.8 17.5L12 22l6.2-1.5L20 3H4z" fill="#1572B6"/><path d="M12 4.5v15.8l4.8-1.2 1.4-14.6H12z" fill="#33A9DC"/><path d="M12 7.7H7.7l.3 3.3h4V7.7zm0 6.6H9.7l-.2-2.3H7.4l.4 4.5 4.2 1.1V14.3z" fill="#fff"/><path d="M12 7.7h4.3l-.4 4.4h-3.9v-4.4zm0 6.6h2.2l-.2 2.3-2 .5V14.3z" fill="#EBEBEB"/></svg>
+              CSS
+            </span>
+            <span class="tech-pill-iconic" title="Javascript">
+              <svg viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="4" fill="#F7DF1E"/><path d="M7 16.5c.5.8 1.2 1.3 2.1 1.3 1.1 0 1.8-.6 1.8-1.7V10H9.2v6.1c0 .5-.3.8-.8.8-.4 0-.7-.2-.9-.5l-.5.1zm7.5.1c.6.9 1.5 1.4 2.5 1.4 1.4 0 2.3-.8 2.3-2 0-1.3-.9-1.8-2.2-2.3-.9-.4-1.3-.7-1.3-1.3 0-.5.4-.9 1.1-.9.7 0 1.1.3 1.4.9l1.4-.8c-.6-1.1-1.5-1.6-2.7-1.6-1.4 0-2.3.9-2.3 2.1 0 1.2.8 1.8 2 2.3.9.4 1.5.7 1.5 1.4 0 .6-.5 1-1.3 1-.8 0-1.4-.4-1.8-1.1l-.6.3z" fill="#000"/></svg>
+              Javascript
+            </span>
           </div>
-          <div class="project-actions">
-            <button class="btn btn-detail" onclick="openProjectModal('design')">
-              Deep Dive
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 6h7M6 2.5 9.5 6 6 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <a href="https://github.com/Hichem08" target="_blank" rel="noopener noreferrer" class="btn-icon-link" aria-label="View on GitHub">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            </a>
-          </div>
+          <a href="https://kitchen-showroom.pages.dev/" target="_blank" rel="noopener noreferrer" class="btn-open-project" title="Open Kitchen Showroom in new tab">
+            <span>Open Project</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
         </div>
       </article>
+
+      <!-- Project 5: Weather App -->
+      <article class="project-card" id="projectCard5" data-current-idx="0" data-images='["/assets/aistudio/Weather_469bdbf0.jpeg"]' data-title="Weather App" data-subtitle="Python, React Native, TailwindCSS • Meteorological Intelligence">
+        <div class="project-media-wrap" onclick="openProjectImage('projectCard5')">
+          <img src="/assets/aistudio/Weather_469bdbf0.jpeg" alt="Weather App" class="project-slide-img" loading="lazy" />
+          <span class="project-slide-indicator">
+            <span class="slide-count">1 / 1</span>
+          </span>
+          <span class="project-zoom-overlay">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            Enlarge
+          </span>
+        </div>
+        <div class="project-info-wrap">
+          <h3 class="project-title">Weather App</h3>
+          <div class="project-tech-list">
+            <span class="tech-pill-iconic" title="Python">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M11.9 2c-3.1 0-4.9.4-4.9 2v3h5v1H5.5C3.5 8 2 9.8 2 12.1c0 2.4 1.6 3.9 3.5 3.9h1.5v-2c0-1.8 1.5-3.3 3.3-3.3h5V8c0-3.3-3.4-6-3.4-6z" fill="#3776AB"/><path d="M12.1 22c3.1 0 4.9-.4 4.9-2v-3h-5v-1h6.5c2 0 3.5-1.8 3.5-4.1 0-2.4-1.6-3.9-3.5-3.9h-1.5v2c0 1.8-1.5 3.3-3.3 3.3h-5V16c0 3.3 3.4 6 3.4 6z" fill="#FFD43B"/><circle cx="9" cy="5" r=".9" fill="#fff"/><circle cx="15" cy="19" r=".9" fill="#fff"/></svg>
+              Python
+            </span>
+            <span class="tech-pill-iconic" title="React Native">
+              <svg viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.8" transform="rotate(30 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.8" transform="rotate(90 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.8" transform="rotate(150 12 12)"/><circle cx="12" cy="12" r="2" fill="#61DAFB"/></svg>
+              React Native
+            </span>
+            <span class="tech-pill-iconic" title="TailwindCss">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M6 12c.5-1.5 1.5-2.5 3-3 2.5-.8 3.5.5 5 0 1.2-.4 1.8-1.2 2-2.5-1 .5-2 1-3 1-2.5.8-3.5-.5-5 0-1.2.4-1.8 1.2-2 4.5zm-4 5c.5-1.5 1.5-2.5 3-3 2.5-.8 3.5.5 5 0 1.2-.4 1.8-1.2 2-2.5-1 .5-2 1-3 1-2.5.8-3.5-.5-5 0-1.2.4-1.8 1.2-2 4.5z" fill="#06B6D4"/></svg>
+              TailwindCss
+            </span>
+          </div>
+          <a href="https://weather-app-dun-nine-72.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-open-project" title="Open Weather App in new tab">
+            <span>Open Project</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 6: Construction Equipment Rental -->
+      <article class="project-card" id="projectCard6" data-current-idx="0" data-images='["/assets/aistudio/construction1_61c0d80f.png", "/assets/aistudio/construction2_8027a0a4.png"]' data-title="Construction Equipment Rental" data-subtitle="ReactJS, CSS • Heavy Equipment Fleet Booking Portal">
+        <div class="project-media-wrap" onclick="openProjectImage('projectCard6')">
+          <img src="/assets/aistudio/construction1_61c0d80f.png" alt="Construction Equipment Rental" class="project-slide-img" loading="lazy" />
+          <button type="button" class="project-slider-btn project-slider-prev" onclick="switchProjectSlide('projectCard6', -1, event)" aria-label="Previous image" title="Previous preview">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button type="button" class="project-slider-btn project-slider-next" onclick="switchProjectSlide('projectCard6', 1, event)" aria-label="Next image" title="Next preview (Click Right)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <span class="project-slide-indicator">
+            <span class="slide-count">1 / 2</span>
+          </span>
+          <span class="project-zoom-overlay">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            Enlarge
+          </span>
+        </div>
+        <div class="project-info-wrap">
+          <h3 class="project-title">Construction Equipment Rental</h3>
+          <div class="project-tech-list">
+            <span class="tech-pill-iconic" title="ReactJS">
+              <svg viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.8" transform="rotate(30 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.8" transform="rotate(90 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.8" transform="rotate(150 12 12)"/><circle cx="12" cy="12" r="2" fill="#61DAFB"/></svg>
+              ReactJS
+            </span>
+            <span class="tech-pill-iconic" title="Css">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 3l1.8 17.5L12 22l6.2-1.5L20 3H4z" fill="#1572B6"/><path d="M12 4.5v15.8l4.8-1.2 1.4-14.6H12z" fill="#33A9DC"/><path d="M12 7.7H7.7l.3 3.3h4V7.7zm0 6.6H9.7l-.2-2.3H7.4l.4 4.5 4.2 1.1V14.3z" fill="#fff"/><path d="M12 7.7h4.3l-.4 4.4h-3.9v-4.4zm0 6.6h2.2l-.2 2.3-2 .5V14.3z" fill="#EBEBEB"/></svg>
+              CSS
+            </span>
+          </div>
+          <a href="https://construction-equipment-rantal.pages.dev/" target="_blank" rel="noopener noreferrer" class="btn-open-project" title="Open Construction Equipment Rental in new tab">
+            <span>Open Project</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <!-- Show All Projects Button -->
+    <div class="projects-show-all-wrap">
+      <button class="btn-show-all-projects" onclick="openAllProjectsModal()" title="View all portfolio projects in a modal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+        <span>Show all Projects</span>
+        <span class="project-count-pill">6+ Live Demos</span>
+      </button>
     </div>
   </section>
 
@@ -4900,21 +5520,20 @@
       </div>
 
       <div class="location-card-visual">
-        <div class="radar-circle"></div>
         <div class="loc-pill-hub">
           <div class="loc-pin-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           </div>
           <div class="loc-hub-details">
-            <h4>International Academic Ties</h4>
-            <p>Cross-continental education &amp; engineering foundation</p>
+            <h4>International Engineering Hub</h4>
+            <p>Cross-continental academic ties &amp; global connectivity</p>
           </div>
         </div>
 
         <div class="loc-zones">
           <div class="loc-zone-item">
-            <span><strong>Algeria:</strong> Blida &amp; Algiers (H2iTM, IFEG)</span>
-            <span style="color: #10b981;">Hub</span>
+            <span><strong>Algeria:</strong> Blida &amp; Algiers (Primary Hub)</span>
+            <span style="color: #10b981; font-weight: 600;">Active Hub</span>
           </div>
           <div class="loc-zone-item">
             <span><strong>France:</strong> Limoges (3iL École d'Ingénieur)</span>
@@ -5100,6 +5719,38 @@
           <span style="color: #94a3b8; font-size: 12px; margin-left: 6px;">Click any card to expand full resolution</span>
         </div>
         <button class="btn btn-ghost" onclick="closeGraphicDesignsModal()" style="height: 38px; border-radius: 12px; font-size: 13px;">Close Window</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALL PROJECTS FLOATING WINDOW MODAL (SHOW ALL) -->
+  <div class="projects-modal-backdrop" id="allProjectsModal" onclick="handleProjectsModalBackdropClick(event)" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="projects-modal-window">
+      <div class="projects-modal-header">
+        <div>
+          <span class="service-badge badge-blue" style="margin-bottom: 6px;">Live Deployed Applications</span>
+          <h3 class="projects-modal-title">All Engineering &amp; Web Projects</h3>
+          <p class="projects-modal-desc">
+            Explore live front-end demos, mobile architectures, administrative dashboards, and showroom experiences.
+          </p>
+        </div>
+        <button class="lightbox-btn lightbox-btn-close" onclick="closeAllProjectsModal()" title="Close Window (Escape)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          Close
+        </button>
+      </div>
+
+      <div class="projects-modal-body">
+        <div class="projects-modal-grid" id="allProjectsModalGrid">
+          <!-- Dynamically populated from allProjectsData array -->
+        </div>
+      </div>
+
+      <div class="projects-modal-footer">
+        <div style="font-size: 13px; color: #cbd5e1; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <span style="color: #94a3b8; font-size: 12px;">Click "Open Project" on any card to launch the live application in a new tab.</span>
+        </div>
+        <button class="btn btn-ghost" onclick="closeAllProjectsModal()" style="height: 38px; border-radius: 12px; font-size: 13px;">Close Window</button>
       </div>
     </div>
   </div>
@@ -5873,6 +6524,223 @@
       }
     }
 
+    // Project Carousel Slider & Zoom
+    function switchProjectSlide(cardId, direction, event) {
+      if (event) {
+        event.stopPropagation();
+      }
+      var card = document.getElementById(cardId);
+      if (!card) return;
+      var img = card.querySelector('.project-slide-img');
+      var indicator = card.querySelector('.slide-count');
+      if (!img) return;
+
+      var images = [];
+      try {
+        images = JSON.parse(card.getAttribute('data-images') || '[]');
+      } catch (err) {
+        images = [];
+      }
+      if (images.length <= 1) return;
+
+      var currentIdx = parseInt(card.getAttribute('data-current-idx') || '0', 10);
+      var nextIdx = (currentIdx + direction + images.length) % images.length;
+      card.setAttribute('data-current-idx', nextIdx);
+
+      img.style.opacity = '0.35';
+      setTimeout(function(){
+        img.src = images[nextIdx];
+        img.style.opacity = '1';
+      }, 100);
+
+      if (indicator) {
+        indicator.textContent = (nextIdx + 1) + ' / ' + images.length;
+      }
+    }
+
+    function openProjectImage(cardId) {
+      var card = document.getElementById(cardId);
+      if (!card) return;
+      var images = [];
+      try {
+        images = JSON.parse(card.getAttribute('data-images') || '[]');
+      } catch (err) {
+        images = [];
+      }
+      var currentIdx = parseInt(card.getAttribute('data-current-idx') || '0', 10);
+      var title = card.getAttribute('data-title') || 'Project Preview';
+      var subtitle = card.getAttribute('data-subtitle') || 'Front-End Preview';
+      var currentSrc = images[currentIdx] || images[0];
+      if (currentSrc) {
+        openCustomImageLightbox(currentSrc, title, subtitle);
+      }
+    }
+
+    // Technology SVG icon generator
+    function getTechIconSvg(iconName) {
+      if (iconName === 'html') {
+        return '<svg viewBox="0 0 24 24" fill="none"><path d="M4 3l1.8 17.5L12 22l6.2-1.5L20 3H4z" fill="#E34F26"/><path d="M12 4.5v15.8l4.8-1.2 1.4-14.6H12z" fill="#EF652A"/><path d="M12 7.7H7.7l.3 3.3h4V7.7zm0 6.6H9.7l-.2-2.3H7.4l.4 4.5 4.2 1.1V14.3z" fill="#fff"/><path d="M12 7.7h4.3l-.4 4.4h-3.9v-4.4zm0 6.6h2.2l-.2 2.3-2 .5V14.3z" fill="#EBEBEB"/></svg>';
+      } else if (iconName === 'css') {
+        return '<svg viewBox="0 0 24 24" fill="none"><path d="M4 3l1.8 17.5L12 22l6.2-1.5L20 3H4z" fill="#1572B6"/><path d="M12 4.5v15.8l4.8-1.2 1.4-14.6H12z" fill="#33A9DC"/><path d="M12 7.7H7.7l.3 3.3h4V7.7zm0 6.6H9.7l-.2-2.3H7.4l.4 4.5 4.2 1.1V14.3z" fill="#fff"/><path d="M12 7.7h4.3l-.4 4.4h-3.9v-4.4zm0 6.6h2.2l-.2 2.3-2 .5V14.3z" fill="#EBEBEB"/></svg>';
+      } else if (iconName === 'js') {
+        return '<svg viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="4" fill="#F7DF1E"/><path d="M7 16.5c.5.8 1.2 1.3 2.1 1.3 1.1 0 1.8-.6 1.8-1.7V10H9.2v6.1c0 .5-.3.8-.8.8-.4 0-.7-.2-.9-.5l-.5.1zm7.5.1c.6.9 1.5 1.4 2.5 1.4 1.4 0 2.3-.8 2.3-2 0-1.3-.9-1.8-2.2-2.3-.9-.4-1.3-.7-1.3-1.3 0-.5.4-.9 1.1-.9.7 0 1.1.3 1.4.9l1.4-.8c-.6-1.1-1.5-1.6-2.7-1.6-1.4 0-2.3.9-2.3 2.1 0 1.2.8 1.8 2 2.3.9.4 1.5.7 1.5 1.4 0 .6-.5 1-1.3 1-.8 0-1.4-.4-1.8-1.1l-.6.3z" fill="#000"/></svg>';
+      } else if (iconName === 'react') {
+        return '<svg viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.8" transform="rotate(30 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.8" transform="rotate(90 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.8" transform="rotate(150 12 12)"/><circle cx="12" cy="12" r="2" fill="#61DAFB"/></svg>';
+      } else if (iconName === 'node') {
+        return '<svg viewBox="0 0 24 24" fill="none"><path d="M12 2l9 5.2v10.4L12 22.8 3 17.6V7.2L12 2z" fill="#68A063"/><path d="M12 4.5l6.8 4v7.9L12 20.3l-6.8-3.9V8.5L12 4.5z" fill="#3E863D"/><circle cx="12" cy="12" r="3.2" fill="#fff"/></svg>';
+      } else if (iconName === 'express') {
+        return '<svg viewBox="0 0 24 24" fill="none"><rect width="22" height="16" x="1" y="4" rx="3" fill="#334155"/><text x="12" y="15.5" font-family="system-ui, sans-serif" font-weight="800" font-size="11" fill="#fff" text-anchor="middle">ex</text></svg>';
+      } else if (iconName === 'mongodb') {
+        return '<svg viewBox="0 0 24 24" fill="none"><path d="M12 2s-6 6.5-6 12.5C6 19 8.5 22 12 22s6-3 6-7.5C18 8.5 12 2 12 2z" fill="#47A248"/><path d="M12 2v20c3.5 0 6-3 6-7.5C18 8.5 12 2 12 2z" fill="#4CAF50"/><path d="M12 5v15" stroke="#fff" stroke-width="1.2"/></svg>';
+      } else if (iconName === 'mysql') {
+        return '<svg viewBox="0 0 24 24" fill="none"><path d="M4 6c0-2.2 3.6-4 8-4s8 1.8 8 4-3.6 4-8 4-8-1.8-8-4z" fill="#00758F"/><path d="M4 9c0 2.2 3.6 4 8 4s8-1.8 8-4v3c0 2.2-3.6 4-8 4s-8-1.8-8-4V9z" fill="#00758F" opacity="0.85"/><path d="M4 14c0 2.2 3.6 4 8 4s8-1.8 8-4v3c0 2.2-3.6 4-8 4s-8-1.8-8-4v-3z" fill="#F29111"/></svg>';
+      } else if (iconName === 'vite') {
+        return '<svg viewBox="0 0 24 24" fill="none"><path d="M21.5 4.5l-9.8 17.3a.6.6 0 0 1-1 0L2.5 4.5a.6.6 0 0 1 .6-.9l8.6 1.7a.6.6 0 0 0 .3 0l8.9-1.7a.6.6 0 0 1 .6.9z" fill="#646CFF"/><path d="M12.8 3.5L8.5 12h4.2l-1.5 6.5 5.5-9.5h-4.2l1.3-5.5z" fill="#FFD62E"/></svg>';
+      } else if (iconName === 'tailwind') {
+        return '<svg viewBox="0 0 24 24" fill="none"><path d="M6 12c.5-1.5 1.5-2.5 3-3 2.5-.8 3.5.5 5 0 1.2-.4 1.8-1.2 2-2.5-1 .5-2 1-3 1-2.5.8-3.5-.5-5 0-1.2.4-1.8 1.2-2 4.5zm-4 5c.5-1.5 1.5-2.5 3-3 2.5-.8 3.5.5 5 0 1.2-.4 1.8-1.2 2-2.5-1 .5-2 1-3 1-2.5.8-3.5-.5-5 0-1.2.4-1.8 1.2-2 4.5z" fill="#06B6D4"/></svg>';
+      } else if (iconName === 'python') {
+        return '<svg viewBox="0 0 24 24" fill="none"><path d="M11.9 2c-3.1 0-4.9.4-4.9 2v3h5v1H5.5C3.5 8 2 9.8 2 12.1c0 2.4 1.6 3.9 3.5 3.9h1.5v-2c0-1.8 1.5-3.3 3.3-3.3h5V8c0-3.3-3.4-6-3.4-6z" fill="#3776AB"/><path d="M12.1 22c3.1 0 4.9-.4 4.9-2v-3h-5v-1h6.5c2 0 3.5-1.8 3.5-4.1 0-2.4-1.6-3.9-3.5-3.9h-1.5v2c0 1.8-1.5 3.3-3.3 3.3h-5V16c0 3.3 3.4 6 3.4 6z" fill="#FFD43B"/><circle cx="9" cy="5" r=".9" fill="#fff"/><circle cx="15" cy="19" r=".9" fill="#fff"/></svg>';
+      }
+      return '';
+    }
+
+    // All Projects Data Dictionary
+    var allProjectsData = [
+      {
+        id: 'sonelgaz-pay',
+        title: 'SONELGAZ Payment APP',
+        images: ['/assets/aistudio/payapp1_ee0dad9e.png', '/assets/aistudio/payapp2_6152dd0a.png'],
+        link: 'https://sonelgaz-pay-app.vercel.app',
+        stack: [
+          { name: 'MERN Stack', isMern: true },
+          { name: 'MongoDB', icon: 'mongodb' },
+          { name: 'ExpressJS', icon: 'express' },
+          { name: 'React Native', icon: 'react' },
+          { name: 'Node JS', icon: 'node' }
+        ],
+        desc: 'Production-ready full-stack mobile application engineered for SONELGAZ electricity and gas billing, Edahabia payment processing, customer accounts, and automated invoicing.'
+      },
+      {
+        id: 'furniture-showroom',
+        title: 'Furniture Showroom',
+        images: ['/assets/aistudio/furniture1_0ece5b15.png', '/assets/aistudio/furniture2_f16a458e.png'],
+        link: 'https://furniture-website-7zx.pages.dev/',
+        stack: [
+          { name: 'HTML', icon: 'html' },
+          { name: 'CSS', icon: 'css' },
+          { name: 'Javascript', icon: 'js' }
+        ],
+        desc: 'Interactive luxury furniture and interior design collection showroom crafted for Blida artisans, featuring bespoke 3D aesthetics and responsive catalog browsing.'
+      },
+      {
+        id: 'sonelgaz-dash',
+        title: 'SONELGAZ Dashboard',
+        images: ['/assets/aistudio/dash1_8ca92373.png', '/assets/aistudio/dash2_1657049a.png'],
+        link: 'https://dashboard-ad-tr.vercel.app',
+        stack: [
+          { name: 'React JS', icon: 'react' },
+          { name: 'Vite', icon: 'vite' },
+          { name: 'TailwindCSS', icon: 'tailwind' },
+          { name: 'MySQL', icon: 'mysql' }
+        ],
+        desc: 'Comprehensive administrative intelligence portal with real-time billing metrics, customer lookup, role management, and energy consumption visualizations.'
+      },
+      {
+        id: 'kitchen-showroom',
+        title: 'Kitchen Showroom',
+        images: ['/assets/aistudio/kitchen1_bf78350e.png', '/assets/aistudio/kitchen2_579915d7.png'],
+        link: 'https://kitchen-showroom.pages.dev/',
+        stack: [
+          { name: 'HTML', icon: 'html' },
+          { name: 'CSS', icon: 'css' },
+          { name: 'Javascript', icon: 'js' }
+        ],
+        desc: 'High-end architectural kitchen showroom highlighting bespoke Italian & modern cabinetry, premium finishes, marble countertops, and interactive model exploration.'
+      },
+      {
+        id: 'weather-app',
+        title: 'Weather App',
+        images: ['/assets/aistudio/Weather_469bdbf0.jpeg'],
+        link: 'https://weather-app-dun-nine-72.vercel.app/',
+        stack: [
+          { name: 'Python', icon: 'python' },
+          { name: 'React Native', icon: 'react' },
+          { name: 'TailwindCss', icon: 'tailwind' }
+        ],
+        desc: 'Clean, modern cross-platform meteorological mobile application delivering real-time weather analytics, 7-day atmospheric forecasts, and multi-city tracking.'
+      },
+      {
+        id: 'construction-rental',
+        title: 'Construction Equipment Rental',
+        images: ['/assets/aistudio/construction1_61c0d80f.png', '/assets/aistudio/construction2_8027a0a4.png'],
+        link: 'https://construction-equipment-rantal.pages.dev/',
+        stack: [
+          { name: 'ReactJS', icon: 'react' },
+          { name: 'Css', icon: 'css' }
+        ],
+        desc: 'Industrial heavy machinery booking and equipment rental portal featuring excavator, dump truck, and backhoe loader specifications with instant rate calculators.'
+      }
+    ];
+
+    function openAllProjectsModal() {
+      var modal = document.getElementById('allProjectsModal');
+      var grid = document.getElementById('allProjectsModalGrid');
+      if (!modal || !grid) return;
+
+      var html = '';
+      allProjectsData.forEach(function(item, idx){
+        var modalCardId = 'modalProject_' + idx;
+        var firstImg = item.images[0];
+        var hasMultiple = item.images.length > 1;
+
+        html += '<div class="project-card" id="' + modalCardId + '" data-current-idx="0" data-images=\'' + JSON.stringify(item.images) + '\' data-title="' + item.title.replace(/'/g, "\\'") + '" data-subtitle="Front-End Live Preview">';
+        html += '  <div class="project-media-wrap" onclick="openProjectImage(\'' + modalCardId + '\')">';
+        html += '    <img src="' + firstImg + '" alt="' + item.title + '" class="project-slide-img" loading="lazy" />';
+        if (hasMultiple) {
+          html += '    <button type="button" class="project-slider-btn project-slider-prev" onclick="switchProjectSlide(\'' + modalCardId + '\', -1, event)" aria-label="Previous image"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></button>';
+          html += '    <button type="button" class="project-slider-btn project-slider-next" onclick="switchProjectSlide(\'' + modalCardId + '\', 1, event)" aria-label="Next image"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>';
+          html += '    <span class="project-slide-indicator"><span class="slide-count">1 / ' + item.images.length + '</span></span>';
+        }
+        html += '    <span class="project-zoom-overlay"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg> Enlarge</span>';
+        html += '  </div>';
+        html += '  <div class="project-info-wrap">';
+        html += '    <h3 class="project-title">' + item.title + '</h3>';
+        html += '    <p style="font-size: 13px; color: #a1a1aa; line-height: 1.5; margin: 0 0 4px;">' + item.desc + '</p>';
+        html += '    <div class="project-tech-list">';
+        item.stack.forEach(function(tech){
+          if (tech.isMern) {
+            html += '<span class="tech-pill-iconic tech-pill-mern">MERN Stack</span>';
+          } else {
+            var iconSvg = getTechIconSvg(tech.icon);
+            html += '<span class="tech-pill-iconic">' + iconSvg + ' ' + tech.name + '</span>';
+          }
+        });
+        html += '    </div>';
+        html += '    <a href="' + item.link + '" target="_blank" rel="noopener noreferrer" class="btn-open-project"><span>Open Project</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>';
+        html += '  </div>';
+        html += '</div>';
+      });
+
+      grid.innerHTML = html;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeAllProjectsModal() {
+      var modal = document.getElementById('allProjectsModal');
+      if (!modal) return;
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    function handleProjectsModalBackdropClick(e) {
+      if (e.target.id === 'allProjectsModal') {
+        closeAllProjectsModal();
+      }
+    }
+
     // Keyboard support for Lightbox and Graphic Designs Modal
     document.addEventListener('keydown', function(e){
       var lightbox = document.getElementById('diplomaLightbox');
@@ -5893,6 +6761,15 @@
       if (gModal && gModal.classList.contains('open')) {
         if (e.key === 'Escape') {
           closeGraphicDesignsModal();
+          return;
+        }
+      }
+
+      var pModal = document.getElementById('allProjectsModal');
+      if (pModal && pModal.classList.contains('open')) {
+        if (e.key === 'Escape') {
+          closeAllProjectsModal();
+          return;
         }
       }
     });
