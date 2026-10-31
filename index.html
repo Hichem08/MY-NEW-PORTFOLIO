@@ -254,6 +254,11 @@
       transform: translateY(1.5px);
     }
 
+    .cv-text-mobile,
+    .current-lang-code-short {
+      display: none !important;
+    }
+
     /* LANGUAGE SWITCHER DROPDOWN */
     .lang-switcher {
       position: relative;
@@ -628,7 +633,7 @@
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
-      object-position: 68% 18%;
+      object-position: 82% 18%;
       display: block;
     }
 
@@ -4095,28 +4100,142 @@
 
     @media (max-width: 768px) {
       .nav {
-        padding: 12px 18px;
+        padding: 8px 12px 8px;
       }
 
-      .nav-links-bar {
-        display: none;
+      .nav-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6px 8px;
+        width: 100%;
+      }
+
+      .logo {
+        font-size: 15.5px;
+        gap: 6px;
+      }
+
+      .logo-dot {
+        width: 7px;
+        height: 7px;
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .btn-cv {
+        height: 31px;
+        padding: 0 10px;
+        font-size: 11.5px;
+        gap: 5px;
+      }
+
+      .btn-cv .dl-icon {
+        width: 12px;
+        height: 12px;
+      }
+
+      .btn-lang {
+        height: 31px;
+        padding: 0 8px;
+        font-size: 11.5px;
+        gap: 4px;
+      }
+
+      .lang-globe-icon {
+        width: 13px;
+        height: 13px;
+      }
+
+      .cv-text-desktop,
+      .current-lang-code {
+        display: none !important;
+      }
+
+      .cv-text-mobile {
+        display: inline !important;
+        font-size: 11.5px;
+        font-weight: 700;
+      }
+
+      .current-lang-code-short {
+        display: inline !important;
+        font-size: 11.5px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+      }
+
+      .lang-caret {
+        width: 9px;
+        height: 9px;
       }
 
       .burger {
         display: flex;
+        width: 33px;
+        height: 31px;
+        border-radius: 9px;
       }
 
-      .btn-cv {
-        height: 34px;
-        padding: 0 14px;
-        font-size: 12px;
+      .burger span,
+      .burger span::before,
+      .burger span::after {
+        width: 15px;
+      }
+
+      .burger span::before { top: -5px; }
+      .burger span::after { top: 5px; }
+
+      /* VISIBLE HORIZONTAL PILL BAR FOR ALL 6 SECTIONS ON MOBILE */
+      .nav-links-bar {
+        display: flex;
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 4px;
+        padding: 4px 6px;
+        border-radius: 999px;
+        background: rgba(14, 14, 22, 0.78);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+        margin-top: 2px;
+      }
+
+      .nav-links-bar::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-btn {
+        padding: 5px 11px;
+        font-size: 11.5px;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .lang-dropdown-menu {
+        right: 0;
+        left: auto;
+        max-width: calc(100vw - 24px);
+      }
+
+      html.rtl-mode .lang-dropdown-menu,
+      body.rtl-mode .lang-dropdown-menu {
+        left: 0;
+        right: auto;
       }
 
       .menu {
         position: fixed;
-        top: 66px;
-        left: 16px;
-        right: 16px;
+        top: 88px;
+        left: 12px;
+        right: 12px;
         background: rgba(12, 12, 18, 0.96);
         -webkit-backdrop-filter: blur(24px);
         backdrop-filter: blur(24px);
@@ -4169,13 +4288,121 @@
       }
 
       .about-main-grid,
-      .location-box,
-      .contact-container {
+      .location-box {
         grid-template-columns: 1fr;
       }
 
       .about-photo-card {
         min-height: 320px;
+      }
+
+      /* COMPACT & RESPONSIVE CONTACT SECTION */
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .contact-info-card,
+      .contact-form-card {
+        padding: 22px 18px;
+        border-radius: 20px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .contact-info-card h3 {
+        font-size: 20px;
+        margin-bottom: 8px;
+      }
+
+      .contact-info-card p {
+        font-size: 13.5px;
+        line-height: 1.55;
+        margin-bottom: 18px;
+      }
+
+      .contact-method {
+        padding: 12px;
+        gap: 10px;
+        border-radius: 12px;
+        margin-bottom: 10px;
+      }
+
+      .method-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+      }
+
+      .method-icon svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .method-label {
+        font-size: 10.5px;
+        letter-spacing: 0.8px;
+      }
+
+      .method-value {
+        font-size: 13px;
+        word-break: break-all;
+        white-space: normal;
+      }
+
+      .btn-copy {
+        padding: 5px 10px;
+        font-size: 11px;
+        border-radius: 6px;
+      }
+
+      .social-links {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        margin-top: 16px;
+      }
+
+      .social-btn {
+        flex: 1;
+        height: 38px;
+        font-size: 12px;
+        border-radius: 10px;
+        gap: 6px;
+      }
+
+      .social-btn svg {
+        width: 15px;
+        height: 15px;
+      }
+
+      .form-group {
+        margin-bottom: 13px;
+      }
+
+      .form-label {
+        font-size: 12px;
+        margin-bottom: 5px;
+      }
+
+      .form-input,
+      .form-textarea {
+        padding: 10px 12px;
+        font-size: 13.5px;
+        border-radius: 10px;
+      }
+
+      .form-textarea {
+        min-height: 85px;
+      }
+
+      .form-btn-submit {
+        height: 42px;
+        font-size: 13.5px;
+        border-radius: 11px;
+        gap: 8px;
       }
     }
 
@@ -4183,8 +4410,14 @@
       :root { --u: 1px; }
 
       .hero {
-        padding-top: 90px;
-        padding-bottom: 40px;
+        padding-top: 100px;
+        padding-bottom: 68px;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
       }
 
       .hero-inner {
@@ -4197,61 +4430,88 @@
       }
 
       .hero-photo-card {
-        width: min(320px, 86vw);
-        height: 195px;
-        margin-bottom: 16px;
+        width: clamp(118px, 31vw, 138px);
+        height: clamp(118px, 31vw, 138px);
+        margin: 0 auto 12px;
       }
 
+      .hero-photo-badge {
+        font-size: 10.5px;
+        padding: 3px 9px;
+        bottom: -5px;
+      }
+
+      /* SINGLE-LINE TITLE TO SAVE SPACE AND AVOID PUSHING THE HERO DOWN */
       h1 {
-        font-size: min(52px, calc((100vw - 44px) / 6.2));
-        line-height: 1.08;
+        font-size: clamp(24px, 7.5vw, 36px);
+        line-height: 1.15;
         letter-spacing: -.02em;
+        margin: 0;
+      }
+
+      h1 .ln,
+      h1 .ln-i {
+        white-space: nowrap;
+        display: inline-block;
       }
 
       .hero-title-roles {
-        font-size: clamp(15.5px, 4.2vw, 19px);
+        font-size: clamp(12.5px, 3.4vw, 14.5px);
         letter-spacing: -0.2px;
-        margin-top: 8px;
+        margin-top: 6px;
+        line-height: 1.35;
       }
 
       .sub {
-        margin-top: 14px;
-        font-size: clamp(14px, 3.8vw, 15.5px);
-        line-height: 1.6;
+        margin-top: 10px;
+        font-size: clamp(12px, 3.3vw, 13.5px);
+        line-height: 1.5;
         letter-spacing: 0;
-        max-width: 42ch;
+        max-width: 40ch;
       }
 
       .sub br {
         display: none;
       }
 
+      /* BUTTONS SIDE-BY-SIDE WITH AMPLE BUFFER ABOVE SCROLL INDICATOR */
       .ctas {
-        margin-top: 22px;
-        gap: 10px;
+        margin-top: 14px;
+        margin-bottom: 22px;
+        gap: 8px;
         transform: none;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        justify-content: center;
       }
 
       .btn-lg {
-        height: 46px;
-        border-radius: 23px;
-        font-size: 15px;
-        gap: 9px;
+        height: 38px;
+        border-radius: 19px;
+        font-size: 12.5px;
+        gap: 6px;
+        padding: 0 14px;
       }
 
       .btn-primary {
-        padding-left: 20px;
-        padding-right: 21px;
+        padding-left: 14px;
+        padding-right: 14px;
       }
 
       .btn-ghost {
-        padding-left: 19px;
-        padding-right: 20px;
+        padding-left: 13px;
+        padding-right: 14px;
+      }
+
+      .scroll-indicator {
+        position: absolute;
+        bottom: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 5;
       }
 
       .section-wrap {
-        padding: 70px 18px;
+        padding: 60px 14px;
       }
 
       .services-grid,
@@ -4262,12 +4522,35 @@
       }
 
       .location-box {
-        padding: 24px;
+        padding: 18px 14px;
+      }
+
+      .contact-info-card,
+      .contact-form-card {
+        padding: 18px 14px;
+        border-radius: 16px;
       }
 
       .social-links {
-        flex-direction: column;
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
       }
+
+      .social-btn {
+        height: 36px;
+        font-size: 11.5px;
+        padding: 0 6px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .logo { font-size: 13.5px; }
+      .btn-cv { padding: 0 6px; font-size: 10.5px; }
+      .btn-lang { padding: 0 6px; font-size: 10.5px; }
+      .burger { width: 30px; height: 28px; }
+      .btn-lg { padding: 0 10px; font-size: 11.5px; }
+      .contact-info-card, .contact-form-card { padding: 14px 10px; }
     }
 
     /* ENTRANCE SEQUENCE */
@@ -4432,7 +4715,8 @@
           <svg class="dl-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M8 2.5v7.5m0 0 3-3m-3 3-3-3M3 13.5h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <span data-i18n="nav_cv">Download CV</span>
+          <span class="cv-text-desktop" data-i18n="nav_cv">Download CV</span>
+          <span class="cv-text-mobile">CV</span>
         </a>
 
         <!-- LANGUAGE SWITCHER DROPDOWN BESIDE DOWNLOAD CV -->
@@ -4444,6 +4728,7 @@
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
             </svg>
             <span class="current-lang-code" id="currentLangLabel">English</span>
+            <span class="current-lang-code-short" id="currentLangCodeShort">EN</span>
             <svg class="lang-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
           <ul class="lang-dropdown-menu" id="langDropdownMenu" role="listbox" aria-label="Languages">
@@ -6214,11 +6499,20 @@
   </div>
 
   <!-- INTERNATIONALIZATION (i18n) ENGINE -->
-  <script src="/i18n.js"></script>
+  <script src="/i18n.js?v=20261031c"></script>
 
   <!-- SCRIPTS: SMOOTH SCROLL, BURGER, MODALS, CLIPBOARD -->
   <script>
     (function(){
+      // Instant Mobile Language Code Update Listener
+      window.addEventListener('portfolio_language_changed', function(e) {
+        var code = (e.detail && e.detail.dict && e.detail.dict.lang_code) || (e.detail && e.detail.lang ? e.detail.lang.toUpperCase() : 'EN');
+        var shortEl = document.getElementById('currentLangCodeShort');
+        if (shortEl) shortEl.textContent = code;
+        var allShorts = document.querySelectorAll('.current-lang-code-short');
+        allShorts.forEach(function(el) { el.textContent = code; });
+      });
+
       // Navigation & Burger
       var burger = document.getElementById('burger');
       var menu = document.getElementById('menu');

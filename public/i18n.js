@@ -916,6 +916,14 @@
     if (labelEl) {
       labelEl.textContent = dict.lang_name;
     }
+    var shortLabelEl = document.getElementById('currentLangCodeShort');
+    if (shortLabelEl) {
+      shortLabelEl.textContent = dict.lang_code;
+    }
+    var shortSpans = document.querySelectorAll('.current-lang-code-short');
+    shortSpans.forEach(function (s) {
+      s.textContent = dict.lang_code;
+    });
 
     // 3. Update Dropdown Menu and Mobile Active states
     var options = document.querySelectorAll('.lang-option');
