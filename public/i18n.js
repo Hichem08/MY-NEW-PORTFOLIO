@@ -73,11 +73,12 @@
       view_cert: 'View Full Certificate',
       view_diploma: 'View Full Diploma',
       view_attestation: 'View Full Attestation',
-      btn_show_diplomas: 'Show All Diplomas & Certificates (+40)',
+      btn_show_diplomas: 'Show All Diplomas & Certificates (+43)',
       btn_hide_diplomas: 'Hide Additional Diplomas & Certificates',
       all_diplomas_title: 'Complete Diplomas & Certifications Catalog',
       all_diplomas_desc: 'Scroll down inside this card to explore all verified diplomas, academic credentials & certified professional badges.',
-      all_diplomas_badge: '+40 Verified Certifications',
+      all_diplomas_badge: '+43 Verified Certifications',
+      all_diplomas_close: 'Exit',
 
       // Diploma Cards Content
       d1_title: 'Agentic AI Certified Foundations Associate',
@@ -88,6 +89,222 @@
       d3_desc: 'Level 6 Certified Qualification (Bachelor’s degree level) in Software Architecture, Information Systems Modeling, Databases & Advanced Web Technologies.',
       d4_title: 'AEC in Web Development (LEA.6C)',
       d4_desc: 'College-level study program (405 hours / 13 credits) covering web engineering, client-server architectures, and software integration.',
+
+      // Catalog Diplomas (8 uploaded verified certificates)
+      cat_1_title: 'Introduction to FastAPI',
+      cat_1_badge: 'CodeSignal Certified',
+      cat_1_source: 'CodeSignal',
+      cat_1_date: 'October 15, 2026',
+
+      cat_2_title: 'HTTP Methods and Request Handling with FastAPI',
+      cat_2_badge: 'API Integration',
+      cat_2_source: 'CodeSignal',
+      cat_2_date: 'October 19, 2026',
+
+      cat_3_title: 'Working with Data Models in FastAPI',
+      cat_3_badge: 'Data Management',
+      cat_3_source: 'CodeSignal',
+      cat_3_date: 'October 24, 2026',
+
+      cat_4_title: 'Introduction to RAG',
+      cat_4_badge: 'RAG Systems',
+      cat_4_source: 'CodeSignal',
+      cat_4_date: 'August 31, 2026',
+
+      cat_5_title: 'Vector Search Fundamentals',
+      cat_5_badge: 'MongoDB Skill',
+      cat_5_source: 'MongoDB Skill',
+      cat_5_date: '2026',
+
+      cat_6_title: 'Foundations in Generative AI',
+      cat_6_badge: 'IBM SkillsBuild',
+      cat_6_source: 'IBM SkillsBuild',
+      cat_6_date: '2026',
+
+      cat_7_title: 'Introduction to Large Language Models',
+      cat_7_badge: 'IBM SkillsBuild',
+      cat_7_source: 'IBM SkillsBuild',
+      cat_7_date: '2026',
+
+      cat_8_title: 'Getting Started with Generative AI',
+      cat_8_badge: 'IBM SkillsBuild',
+      cat_8_source: 'IBM SkillsBuild',
+      cat_8_date: '2026',
+      cat_9_title: 'Terminal Introduction to Kubernetes',
+      cat_9_badge: 'Kubernetes & DevOps',
+      cat_9_source: 'Terminal.io • Kevin Spektor CTO',
+      cat_9_date: 'October 26, 2026',
+
+      cat_10_title: 'Get started with Redis',
+      cat_10_badge: 'Redis In-Memory DB',
+      cat_10_source: 'Redis University',
+      cat_10_date: 'October 18, 2026',
+
+      cat_11_title: 'Docker Essentials: A Developer Introduction',
+      cat_11_badge: 'Docker & Containers',
+      cat_11_source: 'CognitiveClass.ai • IBM Developer Skills Network',
+      cat_11_date: 'October 19, 2026',
+
+      cat_12_title: 'OpenCV Bootcamp',
+      cat_12_badge: 'Computer Vision 100%',
+      cat_12_source: 'OpenCV University',
+      cat_12_date: '2026',
+
+      cat_13_title: 'Introduction to LangSmith Deployment',
+      cat_13_badge: 'LangSmith LLMOps',
+      cat_13_source: 'LangChain Academy',
+      cat_13_date: 'October 13, 2026',
+
+      cat_14_title: 'Introduction to LangGraph - Python',
+      cat_14_badge: 'LangGraph Python',
+      cat_14_source: 'LangChain Academy',
+      cat_14_date: 'October 12, 2026',
+
+      cat_15_title: 'Python Pandas Course',
+      cat_15_badge: 'Pandas Data Science',
+      cat_15_source: 'IntelliPaat Academy',
+      cat_15_date: 'October 11, 2026',
+
+      cat_16_title: 'Building Your First RAG System using LlamaIndex',
+      cat_16_badge: 'LlamaIndex RAG',
+      cat_16_source: 'Analytics Vidhya',
+      cat_16_date: 'October 13, 2026',
+
+      cat_17_title: 'Introduction to NotebookLM',
+      cat_17_badge: 'NotebookLM AI',
+      cat_17_source: 'DAIR.AI Academy',
+      cat_17_date: 'September 24, 2026',
+
+      cat_18_title: 'Embeddings & Semantic Search',
+      cat_18_badge: 'Semantic Embeddings',
+      cat_18_source: 'Learnera',
+      cat_18_date: 'September 23, 2026',
+
+      cat_19_title: 'Fine-Tuning Open-Source LLMs',
+      cat_19_badge: 'LLM Fine-Tuning',
+      cat_19_source: 'Learnera',
+      cat_19_date: 'September 21, 2026',
+
+      cat_20_title: 'Building AI-Powered Search with MongoDB Vector Search',
+      cat_20_badge: 'MongoDB Vector Search',
+      cat_20_source: 'MongoDB Inc.',
+      cat_20_date: 'September 14, 2026',
+
+      cat_21_title: 'Vector Databases AI',
+      cat_21_badge: 'Vector Databases',
+      cat_21_source: 'FreeAcademy.ai',
+      cat_21_date: 'September 8, 2026',
+
+      cat_22_title: 'Python Developer Certification',
+      cat_22_badge: 'freeCodeCamp 300h',
+      cat_22_source: 'freeCodeCamp',
+      cat_22_date: 'October 9, 2026',
+
+      cat_23_title: 'Foundation: Introduction to LangChain - Python',
+      cat_23_badge: 'LangChain Foundation',
+      cat_23_source: 'LangChain Academy',
+      cat_23_date: 'September 5, 2026',
+
+      cat_24_title: 'Professional Claude Code Engineering',
+      cat_24_badge: 'Claude Code Pro',
+      cat_24_source: 'SkillEnsure',
+      cat_24_date: 'September 2026',
+
+      cat_25_title: 'Building Your First RAG System',
+      cat_25_badge: 'RAG Architecture',
+      cat_25_source: 'Analytics Vidhya',
+      cat_25_date: 'September 1, 2026',
+
+      cat_26_title: 'Local RAG Beginners',
+      cat_26_badge: 'Local RAG Systems',
+      cat_26_source: 'FreeAcademy.ai',
+      cat_26_date: 'September 1, 2026',
+
+      cat_27_title: 'RAG Course for Beginners',
+      cat_27_badge: 'Simplilearn RAG',
+      cat_27_source: 'Simplilearn SkillUp',
+      cat_27_date: 'September 1, 2026',
+
+      cat_28_title: 'MCP Model Context Protocol',
+      cat_28_badge: 'Model Context Protocol',
+      cat_28_source: 'FreeAcademy.ai',
+      cat_28_date: 'August 29, 2026',
+
+      cat_29_title: 'Advanced Python',
+      cat_29_badge: 'Advanced Python',
+      cat_29_source: 'Simplilearn SkillUp',
+      cat_29_date: 'October 9, 2026',
+
+      cat_30_title: 'AI Automations Make Zapier',
+      cat_30_badge: 'Make & Zapier',
+      cat_30_source: 'FreeAcademy.ai',
+      cat_30_date: 'August 27, 2026',
+
+      cat_31_title: 'Introduction to LangGraph',
+      cat_31_badge: 'LangGraph Multi-Agent',
+      cat_31_source: 'Simplilearn SkillUp',
+      cat_31_date: 'September 6, 2026',
+
+      cat_32_title: 'Applied AI Foundations',
+      cat_32_badge: 'OpenAI Academy',
+      cat_32_source: 'OpenAI Academy',
+      cat_32_date: 'August 24, 2026',
+
+      cat_33_title: 'AI Foundations',
+      cat_33_badge: 'OpenAI Academy',
+      cat_33_source: 'OpenAI Academy',
+      cat_33_date: 'August 23, 2026',
+
+      cat_34_title: 'Scientific Computing with NumPy',
+      cat_34_badge: 'NumPy Computing',
+      cat_34_source: 'CadetX Learning',
+      cat_34_date: 'October 10, 2026',
+
+      cat_35_title: 'Closing the AI Value Gap - from Copilots to Agentic Automation',
+      cat_35_badge: 'Agentic Automation',
+      cat_35_source: 'Agent Academy.ai',
+      cat_35_date: 'August 23, 2026',
+
+      cat_36_title: 'Understanding Agentic AI',
+      cat_36_badge: 'Agentic AI',
+      cat_36_source: 'Agent Academy.ai',
+      cat_36_date: 'August 21, 2026',
+
+      cat_37_title: 'Generative AI Software Development',
+      cat_37_badge: 'Generative AI Dev',
+      cat_37_source: 'Simplilearn SkillUp',
+      cat_37_date: 'August 17, 2026',
+
+      cat_38_title: 'n8n Quickstart',
+      cat_38_badge: 'n8n Academy',
+      cat_38_source: 'n8n academy',
+      cat_38_date: 'August 18, 2026',
+
+      cat_39_title: 'Computer Graphics – Graphic Design',
+      cat_39_badge: 'ATF Media Academy',
+      cat_39_source: 'ATF Media Academy',
+      cat_39_date: 'November 16, 2024',
+
+      cat_40_title: 'Web Developer Diploma',
+      cat_40_badge: 'H2iT Algiers',
+      cat_40_source: 'H2iT • Higher Institute of Information Technology',
+      cat_40_date: 'February 25, 2024',
+
+      cat_41_title: 'Installation & Maintenance of Autonomous Photovoltaic Systems',
+      cat_41_badge: 'IFEG Sonelgaz',
+      cat_41_source: 'IFEG • Blida Technical School (Sonelgaz)',
+      cat_41_date: 'December 30, 2021',
+
+      cat_42_title: 'Software Engineering with Knowledge Graphs and RAG',
+      cat_42_badge: 'Knowledge Graphs & RAG',
+      cat_42_source: 'Simplilearn SkillUp • Fujitsu',
+      cat_42_date: 'August 19, 2026',
+
+      cat_43_title: 'Work Smarter with AI',
+      cat_43_badge: 'Canva Design School',
+      cat_43_source: 'Canva Design School',
+      cat_43_date: 'August 16, 2026',
+
 
       // Services Header
       services_eyebrow: 'Core Expertise & Solutions',
@@ -136,6 +353,14 @@
       card_ysl_title: 'YSL MYSELF Perfume Product Post',
       card_ebook_title: 'Next Stop The Top E-Book Cover',
       card_cours_title: 'Private Lessons in Social Media Design',
+      gd_cours_story_title: 'Cours Particulier Mobile Story Design',
+      gd_cours_story_category: 'Mobile Story & Vertical Creative',
+      gd_olives_logo_title: 'Olives Organic Brand Logo & Vector Identity',
+      gd_olives_logo_category: 'Vector Logo & Monogram',
+      gd_code_pro_card_title: 'Code Pro Luxury Business Card Mockup',
+      gd_code_pro_card_category: 'Print & Stationery Mockup',
+      gd_nowara_packaging_title: 'Nowara — Vanilla Flan Product Packaging',
+      gd_nowara_packaging_category: 'Product Packaging & Branding',
       btn_show_designs: 'Show All Graphic Designs',
       designs_count_pill: '+40 Showcase',
       graphic_modal_badge: 'Visual Arts & Branding Portfolio',
@@ -293,11 +518,12 @@
       view_cert: 'Voir le Certificat Complet',
       view_diploma: 'Voir le Diplôme Complet',
       view_attestation: 'Voir l\'Attestation Complète',
-      btn_show_diplomas: 'Afficher Tous les Diplômes & Certificats (+40)',
+      btn_show_diplomas: 'Afficher Tous les Diplômes & Certificats (+43)',
       btn_hide_diplomas: 'Masquer les Diplômes Supplémentaires',
       all_diplomas_title: 'Catalogue Complet des Diplômes & Certifications',
       all_diplomas_desc: 'Faites défiler cette carte pour explorer l\'ensemble des diplômes d\'État, qualifications académiques et badges professionnels certifiés.',
-      all_diplomas_badge: '+40 Certifications Vérifiées',
+      all_diplomas_badge: '+43 Certifications Vérifiées',
+      all_diplomas_close: 'Quitter',
 
       // Diploma Cards Content
       d1_title: 'Agentic AI Certified Foundations Associate',
@@ -308,6 +534,222 @@
       d3_desc: 'Titre certifié Niveau 6 (Bac+3) en Architecture Logicielle, Modélisation des Systèmes d\'Information, Bases de Données & Technologies Web Avancées.',
       d4_title: 'AEC en Développement Web (LEA.6C)',
       d4_desc: 'Programme collégial approfondi (405 heures / 13 crédits) couvrant l\'ingénierie web, les architectures client-serveur et l\'intégration logicielle.',
+
+      // Catalog Diplomas (8 uploaded verified certificates)
+      cat_1_title: 'Introduction à FastAPI',
+      cat_1_badge: 'Certifié CodeSignal',
+      cat_1_source: 'CodeSignal',
+      cat_1_date: '15 Octobre 2026',
+
+      cat_2_title: 'Méthodes HTTP et Gestion des Requêtes avec FastAPI',
+      cat_2_badge: 'Intégration d\'API',
+      cat_2_source: 'CodeSignal',
+      cat_2_date: '19 Octobre 2026',
+
+      cat_3_title: 'Modèles de Données avec FastAPI',
+      cat_3_badge: 'Gestion des Données',
+      cat_3_source: 'CodeSignal',
+      cat_3_date: '24 Octobre 2026',
+
+      cat_4_title: 'Introduction au RAG',
+      cat_4_badge: 'Systèmes RAG',
+      cat_4_source: 'CodeSignal',
+      cat_4_date: '31 Août 2026',
+
+      cat_5_title: 'Fondamentaux de la Recherche Vectorielle',
+      cat_5_badge: 'Compétence MongoDB',
+      cat_5_source: 'MongoDB Skill',
+      cat_5_date: '2026',
+
+      cat_6_title: 'Fondements de l\'IA Générative',
+      cat_6_badge: 'IBM SkillsBuild',
+      cat_6_source: 'IBM SkillsBuild',
+      cat_6_date: '2026',
+
+      cat_7_title: 'Introduction aux Grands Modèles de Langage (LLM)',
+      cat_7_badge: 'IBM SkillsBuild',
+      cat_7_source: 'IBM SkillsBuild',
+      cat_7_date: '2026',
+
+      cat_8_title: 'Premiers Pas avec l\'IA Générative',
+      cat_8_badge: 'IBM SkillsBuild',
+      cat_8_source: 'IBM SkillsBuild',
+      cat_8_date: '2026',
+      cat_9_title: 'Introduction à Kubernetes via Terminal',
+      cat_9_badge: 'Kubernetes & DevOps',
+      cat_9_source: 'Terminal.io • Kevin Spektor CTO',
+      cat_9_date: '26 Octobre 2026',
+
+      cat_10_title: 'Premiers Pas avec Redis',
+      cat_10_badge: 'Base In-Memory Redis',
+      cat_10_source: 'Redis University',
+      cat_10_date: '18 Octobre 2026',
+
+      cat_11_title: 'Les Essentiels de Docker pour Développeurs',
+      cat_11_badge: 'Docker & Conteneurs',
+      cat_11_source: 'CognitiveClass.ai • Réseau Compétences IBM',
+      cat_11_date: '19 Octobre 2026',
+
+      cat_12_title: 'Bootcamp OpenCV Vision par Ordinateur',
+      cat_12_badge: 'Vision Numérique 100%',
+      cat_12_source: 'OpenCV University',
+      cat_12_date: '2026',
+
+      cat_13_title: 'Introduction au Déploiement LangSmith',
+      cat_13_badge: 'LangSmith LLMOps',
+      cat_13_source: 'LangChain Academy',
+      cat_13_date: '13 Octobre 2026',
+
+      cat_14_title: 'Introduction à LangGraph - Python',
+      cat_14_badge: 'LangGraph Python',
+      cat_14_source: 'LangChain Academy',
+      cat_14_date: '12 Octobre 2026',
+
+      cat_15_title: 'Formation Python Pandas',
+      cat_15_badge: 'Data Science Pandas',
+      cat_15_source: 'IntelliPaat Academy',
+      cat_15_date: '11 Octobre 2026',
+
+      cat_16_title: 'Créer son Premier Système RAG avec LlamaIndex',
+      cat_16_badge: 'LlamaIndex RAG',
+      cat_16_source: 'Analytics Vidhya',
+      cat_16_date: '13 Octobre 2026',
+
+      cat_17_title: 'Introduction à NotebookLM',
+      cat_17_badge: 'NotebookLM IA',
+      cat_17_source: 'DAIR.AI Academy',
+      cat_17_date: '24 Septembre 2026',
+
+      cat_18_title: 'Plongements Vectoriels & Recherche Sémantique',
+      cat_18_badge: 'Plongements Sémantiques',
+      cat_18_source: 'Learnera',
+      cat_18_date: '23 Septembre 2026',
+
+      cat_19_title: 'Fine-Tuning de LLMs Open-Source',
+      cat_19_badge: 'Fine-Tuning LLM',
+      cat_19_source: 'Learnera',
+      cat_19_date: '21 Septembre 2026',
+
+      cat_20_title: 'Recherche Propulsée par l\'IA avec MongoDB Vector Search',
+      cat_20_badge: 'Recherche Vectorielle MongoDB',
+      cat_20_source: 'MongoDB Inc.',
+      cat_20_date: '14 Septembre 2026',
+
+      cat_21_title: 'Bases de Données Vectorielles IA',
+      cat_21_badge: 'Bases Vectorielles',
+      cat_21_source: 'FreeAcademy.ai',
+      cat_21_date: '8 Septembre 2026',
+
+      cat_22_title: 'Certification Développeur Python',
+      cat_22_badge: 'freeCodeCamp 300h',
+      cat_22_source: 'freeCodeCamp',
+      cat_22_date: '9 Octobre 2026',
+
+      cat_23_title: 'Fondations : Introduction à LangChain - Python',
+      cat_23_badge: 'Fondations LangChain',
+      cat_23_source: 'LangChain Academy',
+      cat_23_date: '5 Septembre 2026',
+
+      cat_24_title: 'Ingénierie de Code Professionnelle avec Claude',
+      cat_24_badge: 'Claude Code Pro',
+      cat_24_source: 'SkillEnsure',
+      cat_24_date: 'Septembre 2026',
+
+      cat_25_title: 'Construire son Premier Système RAG',
+      cat_25_badge: 'Architecture RAG',
+      cat_25_source: 'Analytics Vidhya',
+      cat_25_date: '1 Septembre 2026',
+
+      cat_26_title: 'Systèmes RAG Locaux pour Débutants',
+      cat_26_badge: 'Systèmes RAG Locaux',
+      cat_26_source: 'FreeAcademy.ai',
+      cat_26_date: '1 Septembre 2026',
+
+      cat_27_title: 'Cours RAG pour Débutants',
+      cat_27_badge: 'Simplilearn RAG',
+      cat_27_source: 'Simplilearn SkillUp',
+      cat_27_date: '1 Septembre 2026',
+
+      cat_28_title: 'Protocole MCP Model Context Protocol',
+      cat_28_badge: 'Protocole MCP',
+      cat_28_source: 'FreeAcademy.ai',
+      cat_28_date: '29 Août 2026',
+
+      cat_29_title: 'Python Avancé',
+      cat_29_badge: 'Python Avancé',
+      cat_29_source: 'Simplilearn SkillUp',
+      cat_29_date: '9 Octobre 2026',
+
+      cat_30_title: 'Automatisations IA avec Make & Zapier',
+      cat_30_badge: 'Make & Zapier',
+      cat_30_source: 'FreeAcademy.ai',
+      cat_30_date: '27 Août 2026',
+
+      cat_31_title: 'Introduction à LangGraph Multi-Agents',
+      cat_31_badge: 'LangGraph Multi-Agents',
+      cat_31_source: 'Simplilearn SkillUp',
+      cat_31_date: '6 Septembre 2026',
+
+      cat_32_title: 'Fondations de l\'IA Appliquée',
+      cat_32_badge: 'OpenAI Academy',
+      cat_32_source: 'OpenAI Academy',
+      cat_32_date: '24 Août 2026',
+
+      cat_33_title: 'Fondements de l\'Intelligence Artificielle',
+      cat_33_badge: 'OpenAI Academy',
+      cat_33_source: 'OpenAI Academy',
+      cat_33_date: '23 Août 2026',
+
+      cat_34_title: 'Calcul Scientifique avec NumPy',
+      cat_34_badge: 'Calcul Scientifique NumPy',
+      cat_34_source: 'CadetX Learning',
+      cat_34_date: '10 Octobre 2026',
+
+      cat_35_title: 'Combler le Fossé de Valeur de l\'IA : des Copilotes à l\'Automatisation Agentique',
+      cat_35_badge: 'Automatisation Agentique',
+      cat_35_source: 'Agent Academy.ai',
+      cat_35_date: '23 Août 2026',
+
+      cat_36_title: 'Comprendre l\'IA Agentique',
+      cat_36_badge: 'IA Agentique',
+      cat_36_source: 'Agent Academy.ai',
+      cat_36_date: '21 Août 2026',
+
+      cat_37_title: 'Développement Logiciel avec l\'IA Générative',
+      cat_37_badge: 'Dév IA Générative',
+      cat_37_source: 'Simplilearn SkillUp',
+      cat_37_date: '17 Août 2026',
+
+      cat_38_title: 'n8n Quickstart – Automatisation de Workflows',
+      cat_38_badge: 'n8n Academy',
+      cat_38_source: 'n8n academy',
+      cat_38_date: '18 Août 2026',
+
+      cat_39_title: 'Infographie – Graphic Design',
+      cat_39_badge: 'ATF Media Academy',
+      cat_39_source: 'ATF Media Academy',
+      cat_39_date: '16 Novembre 2024',
+
+      cat_40_title: 'Diplôme de Développeur Web',
+      cat_40_badge: 'H2iT Alger',
+      cat_40_source: 'H2iT • Institut Supérieur des Technologies de l\'Information',
+      cat_40_date: '25 Février 2024',
+
+      cat_41_title: 'Installation et Maintenance des Systèmes Photovoltaïques Autonomes',
+      cat_41_badge: 'IFEG Sonelgaz',
+      cat_41_source: 'IFEG • Ecole Technique de Blida (Sonelgaz)',
+      cat_41_date: '30 Décembre 2021',
+
+      cat_42_title: 'Ingénierie Logicielle avec Graphes de Connaissances et RAG',
+      cat_42_badge: 'Graphes de Connaissances & RAG',
+      cat_42_source: 'Simplilearn SkillUp • Fujitsu',
+      cat_42_date: '19 Août 2026',
+
+      cat_43_title: 'Travailler Plus Intelligemment avec l\'IA',
+      cat_43_badge: 'Canva Design School',
+      cat_43_source: 'Canva Design School',
+      cat_43_date: '16 Août 2026',
+
 
       // Services Header
       services_eyebrow: 'Expertises Clés & Solutions',
@@ -513,11 +955,12 @@
       view_cert: 'Visualizza Certificato Completo',
       view_diploma: 'Visualizza Diploma Completo',
       view_attestation: 'Visualizza Attestato Completo',
-      btn_show_diplomas: 'Mostra Tutti i Diplomi & Certificati (+40)',
+      btn_show_diplomas: 'Mostra Tutti i Diplomi & Certificati (+43)',
       btn_hide_diplomas: 'Nascondi Diplomi Aggiuntivi',
       all_diplomas_title: 'Catalogo Completo Diplomi & Certificazioni',
       all_diplomas_desc: 'Scorri questa scheda per esplorare tutti i titoli accademici verificati e i badge professionali certificati.',
-      all_diplomas_badge: '+40 Certificazioni Verificate',
+      all_diplomas_badge: '+43 Certificazioni Verificate',
+      all_diplomas_close: 'Esci',
 
       // Diploma Cards Content
       d1_title: 'Agentic AI Certified Foundations Associate',
@@ -528,6 +971,222 @@
       d3_desc: 'Qualifica certificata di Livello 6 (Laurea Triennale) in Architettura Software, Modellazione dei Sistemi Informativi, Database e Tecnologie Web Avanzate.',
       d4_title: 'AEC in Sviluppo Web (LEA.6C)',
       d4_desc: 'Programma di studi collegiale approfondito (405 ore / 13 crediti) su ingegneria web, architetture client-server e integrazione software.',
+
+      // Catalog Diplomas (8 uploaded verified certificates)
+      cat_1_title: 'Introduzione a FastAPI',
+      cat_1_badge: 'Certificato CodeSignal',
+      cat_1_source: 'CodeSignal',
+      cat_1_date: '15 Ottobre 2026',
+
+      cat_2_title: 'Metodi HTTP e Gestione Richieste con FastAPI',
+      cat_2_badge: 'Integrazione API',
+      cat_2_source: 'CodeSignal',
+      cat_2_date: '19 Ottobre 2026',
+
+      cat_3_title: 'Modelli di Dati in FastAPI',
+      cat_3_badge: 'Gestione Dati',
+      cat_3_source: 'CodeSignal',
+      cat_3_date: '24 Ottobre 2026',
+
+      cat_4_title: 'Introduzione a RAG',
+      cat_4_badge: 'Sistemi RAG',
+      cat_4_source: 'CodeSignal',
+      cat_4_date: '31 Agosto 2026',
+
+      cat_5_title: 'Fondamenti di Ricerca Vettoriale',
+      cat_5_badge: 'Competenza MongoDB',
+      cat_5_source: 'MongoDB Skill',
+      cat_5_date: '2026',
+
+      cat_6_title: 'Fondamenti di IA Generativa',
+      cat_6_badge: 'IBM SkillsBuild',
+      cat_6_source: 'IBM SkillsBuild',
+      cat_6_date: '2026',
+
+      cat_7_title: 'Introduzione ai Grandi Modelli Linguistici (LLM)',
+      cat_7_badge: 'IBM SkillsBuild',
+      cat_7_source: 'IBM SkillsBuild',
+      cat_7_date: '2026',
+
+      cat_8_title: 'Iniziare con l\'IA Generativa',
+      cat_8_badge: 'IBM SkillsBuild',
+      cat_8_source: 'IBM SkillsBuild',
+      cat_8_date: '2026',
+      cat_9_title: 'Introduzione a Kubernetes da Terminale',
+      cat_9_badge: 'Kubernetes & DevOps',
+      cat_9_source: 'Terminal.io • Kevin Spektor CTO',
+      cat_9_date: '26 Ottobre 2026',
+
+      cat_10_title: 'Iniziare con Redis',
+      cat_10_badge: 'Database In-Memory Redis',
+      cat_10_source: 'Redis University',
+      cat_10_date: '18 Ottobre 2026',
+
+      cat_11_title: 'Elementi Essenziali di Docker per Sviluppatori',
+      cat_11_badge: 'Docker & Container',
+      cat_11_source: 'CognitiveClass.ai • Rete Competenze IBM',
+      cat_11_date: '19 Ottobre 2026',
+
+      cat_12_title: 'Bootcamp OpenCV Visione Artificiale',
+      cat_12_badge: 'Computer Vision 100%',
+      cat_12_source: 'OpenCV University',
+      cat_12_date: '2026',
+
+      cat_13_title: 'Introduzione al Deployment di LangSmith',
+      cat_13_badge: 'LangSmith LLMOps',
+      cat_13_source: 'LangChain Academy',
+      cat_13_date: '13 Ottobre 2026',
+
+      cat_14_title: 'Introduzione a LangGraph - Python',
+      cat_14_badge: 'LangGraph Python',
+      cat_14_source: 'LangChain Academy',
+      cat_14_date: '12 Ottobre 2026',
+
+      cat_15_title: 'Corso Python Pandas',
+      cat_15_badge: 'Data Science Pandas',
+      cat_15_source: 'IntelliPaat Academy',
+      cat_15_date: '11 Ottobre 2026',
+
+      cat_16_title: 'Costruire il Primo Sistema RAG con LlamaIndex',
+      cat_16_badge: 'LlamaIndex RAG',
+      cat_16_source: 'Analytics Vidhya',
+      cat_16_date: '13 Ottobre 2026',
+
+      cat_17_title: 'Introduzione a NotebookLM',
+      cat_17_badge: 'NotebookLM IA',
+      cat_17_source: 'DAIR.AI Academy',
+      cat_17_date: '24 Settembre 2026',
+
+      cat_18_title: 'Embedding & Ricerca Semantica',
+      cat_18_badge: 'Embedding Semantico',
+      cat_18_source: 'Learnera',
+      cat_18_date: '23 Settembre 2026',
+
+      cat_19_title: 'Fine-Tuning di LLM Open-Source',
+      cat_19_badge: 'Fine-Tuning LLM',
+      cat_19_source: 'Learnera',
+      cat_19_date: '21 Settembre 2026',
+
+      cat_20_title: 'Ricerca con IA con MongoDB Vector Search',
+      cat_20_badge: 'Ricerca Vettoriale MongoDB',
+      cat_20_source: 'MongoDB Inc.',
+      cat_20_date: '14 Settembre 2026',
+
+      cat_21_title: 'Database Vettoriali per IA',
+      cat_21_badge: 'Database Vettoriali',
+      cat_21_source: 'FreeAcademy.ai',
+      cat_21_date: '8 Settembre 2026',
+
+      cat_22_title: 'Certificazione Sviluppatore Python',
+      cat_22_badge: 'freeCodeCamp 300h',
+      cat_22_source: 'freeCodeCamp',
+      cat_22_date: '9 Ottobre 2026',
+
+      cat_23_title: 'Fondamenta: Introduzione a LangChain - Python',
+      cat_23_badge: 'Fondamenta LangChain',
+      cat_23_source: 'LangChain Academy',
+      cat_23_date: '5 Settembre 2026',
+
+      cat_24_title: 'Ingegneria di Codice Professionale con Claude',
+      cat_24_badge: 'Claude Code Pro',
+      cat_24_source: 'SkillEnsure',
+      cat_24_date: 'Settembre 2026',
+
+      cat_25_title: 'Costruire il Primo Sistema RAG',
+      cat_25_badge: 'Architettura RAG',
+      cat_25_source: 'Analytics Vidhya',
+      cat_25_date: '1 Settembre 2026',
+
+      cat_26_title: 'Sistemi RAG Locali per Principianti',
+      cat_26_badge: 'Sistemi RAG Locali',
+      cat_26_source: 'FreeAcademy.ai',
+      cat_26_date: '1 Settembre 2026',
+
+      cat_27_title: 'Corso RAG per Principianti',
+      cat_27_badge: 'Simplilearn RAG',
+      cat_27_source: 'Simplilearn SkillUp',
+      cat_27_date: '1 Settembre 2026',
+
+      cat_28_title: 'Protocollo MCP Model Context Protocol',
+      cat_28_badge: 'Protocollo MCP',
+      cat_28_source: 'FreeAcademy.ai',
+      cat_28_date: '29 Agosto 2026',
+
+      cat_29_title: 'Python Avanzato',
+      cat_29_badge: 'Python Avanzato',
+      cat_29_source: 'Simplilearn SkillUp',
+      cat_29_date: '9 Ottobre 2026',
+
+      cat_30_title: 'Automazioni IA con Make & Zapier',
+      cat_30_badge: 'Make & Zapier',
+      cat_30_source: 'FreeAcademy.ai',
+      cat_30_date: '27 Agosto 2026',
+
+      cat_31_title: 'Introduzione a LangGraph Multi-Agente',
+      cat_31_badge: 'LangGraph Multi-Agente',
+      cat_31_source: 'Simplilearn SkillUp',
+      cat_31_date: '6 Settembre 2026',
+
+      cat_32_title: 'Fondamenti di IA Applicata',
+      cat_32_badge: 'OpenAI Academy',
+      cat_32_source: 'OpenAI Academy',
+      cat_32_date: '24 Agosto 2026',
+
+      cat_33_title: 'Fondamenti di Intelligenza Artificiale',
+      cat_33_badge: 'OpenAI Academy',
+      cat_33_source: 'OpenAI Academy',
+      cat_33_date: '23 Agosto 2026',
+
+      cat_34_title: 'Calcolo Scientifico con NumPy',
+      cat_34_badge: 'Calcolo Scientifico NumPy',
+      cat_34_source: 'CadetX Learning',
+      cat_34_date: '10 Ottobre 2026',
+
+      cat_35_title: 'Colmare il Divario di Valore dell\'IA: dai Copiloti all\'Automazione Agentica',
+      cat_35_badge: 'Automazione Agentica',
+      cat_35_source: 'Agent Academy.ai',
+      cat_35_date: '23 Agosto 2026',
+
+      cat_36_title: 'Comprendere l\'IA Agentica',
+      cat_36_badge: 'IA Agentica',
+      cat_36_source: 'Agent Academy.ai',
+      cat_36_date: '21 Agosto 2026',
+
+      cat_37_title: 'Sviluppo Software con IA Generativa',
+      cat_37_badge: 'Sviluppo IA Generativa',
+      cat_37_source: 'Simplilearn SkillUp',
+      cat_37_date: '17 Agosto 2026',
+
+      cat_38_title: 'n8n Quickstart – Automazione Workflow',
+      cat_38_badge: 'n8n Academy',
+      cat_38_source: 'n8n academy',
+      cat_38_date: '18 Agosto 2026',
+
+      cat_39_title: 'Grafica Digitale – Graphic Design',
+      cat_39_badge: 'ATF Media Academy',
+      cat_39_source: 'ATF Media Academy',
+      cat_39_date: '16 Novembre 2024',
+
+      cat_40_title: 'Diploma di Sviluppatore Web',
+      cat_40_badge: 'H2iT Algeri',
+      cat_40_source: 'H2iT • Istituto Superiore di Tecnologie dell\'Informazione',
+      cat_40_date: '25 Febbraio 2024',
+
+      cat_41_title: 'Installazione e Manutenzione di Sistemi Fotovoltaici Autonomi',
+      cat_41_badge: 'IFEG Sonelgaz',
+      cat_41_source: 'IFEG • Scuola Tecnica di Blida (Sonelgaz)',
+      cat_41_date: '30 Dicembre 2021',
+
+      cat_42_title: 'Ingegneria del Software con Knowledge Graphs e RAG',
+      cat_42_badge: 'Knowledge Graphs & RAG',
+      cat_42_source: 'Simplilearn SkillUp • Fujitsu',
+      cat_42_date: '19 Agosto 2026',
+
+      cat_43_title: 'Lavorare in Modo Più Intelligente con l\'IA',
+      cat_43_badge: 'Canva Design School',
+      cat_43_source: 'Canva Design School',
+      cat_43_date: '16 Agosto 2026',
+
 
       // Services Header
       services_eyebrow: 'Competenze Principali & Soluzioni',
@@ -733,11 +1392,12 @@
       view_cert: 'عرض الشهادة كاملة',
       view_diploma: 'عرض الدبلوم كاملاً',
       view_attestation: 'عرض الإفادة كاملة',
-      btn_show_diplomas: 'عرض جميع الشهادات والدبلومات (+40)',
+      btn_show_diplomas: 'عرض جميع الشهادات والدبلومات (+43)',
       btn_hide_diplomas: 'إخفاء الشهادات الإضافية',
       all_diplomas_title: 'الدليل الشامل للشهادات والمؤهلات الأكاديمية',
       all_diplomas_desc: 'مرر لأسفل داخل هذه البطاقة لاستكشاف كافة الشهادات الجامعية والدبلومات المعتمدة والاعتمادات المهنية الدولية.',
-      all_diplomas_badge: '+40 شهادة معتمدة وموثقة',
+      all_diplomas_badge: '+37 شهادة موثقة',
+      all_diplomas_close: 'إغلاق',
 
       // Diploma Cards Content
       d1_title: 'Agentic AI Certified Foundations Associate',
@@ -748,6 +1408,222 @@
       d3_desc: 'مؤهل معتمد من المستوى السادس (بكالوريوس / ليسانس) في هندسة البرمجيات ونمذجة نظم المعلومات وقواعد البيانات وتقنيات الويب المتقدمة.',
       d4_title: 'شهادة دراسات جامعية في تطوير الويب (LEA.6C)',
       d4_desc: 'برنامج كلية كندي متقدم (405 ساعات / 13 وحدة دراسية) في هندسة الويب وبرمجة الخوادم وتكامل البرمجيات من CÉGEP de Saint-Félicien.',
+
+      // Catalog Diplomas (8 uploaded verified certificates)
+      cat_1_title: 'مقدمة في FastAPI',
+      cat_1_badge: 'معتمد من CodeSignal',
+      cat_1_source: 'CodeSignal',
+      cat_1_date: '15 أكتوبر 2026',
+
+      cat_2_title: 'طرق HTTP ومعالجة الطلبات عبر FastAPI',
+      cat_2_badge: 'تكامل واجهات البرمجة',
+      cat_2_source: 'CodeSignal',
+      cat_2_date: '19 أكتوبر 2026',
+
+      cat_3_title: 'نماذج البيانات في FastAPI',
+      cat_3_badge: 'إدارة البيانات',
+      cat_3_source: 'CodeSignal',
+      cat_3_date: '24 أكتوبر 2026',
+
+      cat_4_title: 'مقدمة في هندسة RAG',
+      cat_4_badge: 'أنظمة RAG',
+      cat_4_source: 'CodeSignal',
+      cat_4_date: '31 أغسطس 2026',
+
+      cat_5_title: 'أساسيات البحث الشعاعي',
+      cat_5_badge: 'مهارة MongoDB',
+      cat_5_source: 'MongoDB Skill',
+      cat_5_date: '2026',
+
+      cat_6_title: 'أسس الذكاء الاصطناعي التوليدي',
+      cat_6_badge: 'IBM SkillsBuild',
+      cat_6_source: 'IBM SkillsBuild',
+      cat_6_date: '2026',
+
+      cat_7_title: 'مقدمة في النماذج اللغوية الكبيرة (LLMs)',
+      cat_7_badge: 'IBM SkillsBuild',
+      cat_7_source: 'IBM SkillsBuild',
+      cat_7_date: '2026',
+
+      cat_8_title: 'البداية مع الذكاء الاصطناعي التوليدي',
+      cat_8_badge: 'IBM SkillsBuild',
+      cat_8_source: 'IBM SkillsBuild',
+      cat_8_date: '2026',
+      cat_9_title: 'مقدمة في كوبرنيتس عبر الطرفية',
+      cat_9_badge: 'كوبرنيتس و DevOps',
+      cat_9_source: 'منصة Terminal.io • المدير التقني',
+      cat_9_date: '26 أكتوبر 2026',
+
+      cat_10_title: 'البداية مع Redis',
+      cat_10_badge: 'قواعد بيانات Redis السريعة',
+      cat_10_source: 'أكاديمية Redis',
+      cat_10_date: '18 أكتوبر 2026',
+
+      cat_11_title: 'أساسيات Docker للمطورين',
+      cat_11_badge: 'دوكر وحاويات البرمجيات',
+      cat_11_source: 'شبكة مهارات IBM • CognitiveClass.ai',
+      cat_11_date: '19 أكتوبر 2026',
+
+      cat_12_title: 'معسكر OpenCV للرؤية الحاسوبية',
+      cat_12_badge: 'رؤية حاسوبية 100%',
+      cat_12_source: 'جامعة OpenCV',
+      cat_12_date: '2026',
+
+      cat_13_title: 'مقدمة في نشر وتتبع LangSmith',
+      cat_13_badge: 'عمليات نماذج اللغات LangSmith',
+      cat_13_source: 'أكاديمية LangChain',
+      cat_13_date: '13 أكتوبر 2026',
+
+      cat_14_title: 'مقدمة في LangGraph بلغة بايثون',
+      cat_14_badge: 'بايثون LangGraph',
+      cat_14_source: 'أكاديمية LangChain',
+      cat_14_date: '12 أكتوبر 2026',
+
+      cat_15_title: 'دورة تحليل البيانات بايثون Pandas',
+      cat_15_badge: 'علوم البيانات عبر Pandas',
+      cat_15_source: 'أكاديمية IntelliPaat',
+      cat_15_date: '11 أكتوبر 2026',
+
+      cat_16_title: 'بناء أول نظام RAG باستخدام LlamaIndex',
+      cat_16_badge: 'أنظمة LlamaIndex RAG',
+      cat_16_source: 'منصة Analytics Vidhya',
+      cat_16_date: '13 أكتوبر 2026',
+
+      cat_17_title: 'مقدمة في أداة NotebookLM',
+      cat_17_badge: 'أداة NotebookLM الذكية',
+      cat_17_source: 'أكاديمية DAIR.AI',
+      cat_17_date: '24 سبتمبر 2026',
+
+      cat_18_title: 'التضمينات الشعاعية والبحث الدلالي',
+      cat_18_badge: 'البحث الدلالي والتضمين',
+      cat_18_source: 'أكاديمية Learnera',
+      cat_18_date: '23 سبتمبر 2026',
+
+      cat_19_title: 'ضبط وتطويع النماذج مفتوحة المصدر',
+      cat_19_badge: 'تطويع وتخصيص LLMs',
+      cat_19_source: 'أكاديمية Learnera',
+      cat_19_date: '21 سبتمبر 2026',
+
+      cat_20_title: 'بناء بحث مدعوم بالذكاء الاصطناعي مع MongoDB',
+      cat_20_badge: 'بحث شعاعي عبر MongoDB',
+      cat_20_source: 'شركة MongoDB',
+      cat_20_date: '14 سبتمبر 2026',
+
+      cat_21_title: 'قواعد البيانات الشعاعية للذكاء الاصطناعي',
+      cat_21_badge: 'قواعد بيانات شعاعية',
+      cat_21_source: 'أكاديمية FreeAcademy.ai',
+      cat_21_date: '8 سبتمبر 2026',
+
+      cat_22_title: 'شهادة مطور بايثون المعتمدة',
+      cat_22_badge: 'freeCodeCamp 300 ساعة',
+      cat_22_source: 'منظمة freeCodeCamp',
+      cat_22_date: '9 أكتوبر 2026',
+
+      cat_23_title: 'التأسيس: مقدمة في LangChain بلغة بايثون',
+      cat_23_badge: 'أساسيات LangChain',
+      cat_23_source: 'أكاديمية LangChain',
+      cat_23_date: '5 سبتمبر 2026',
+
+      cat_24_title: 'هندسة الكود الاحترافية مع Claude',
+      cat_24_badge: 'هندسة كود Claude المتقدمة',
+      cat_24_source: 'هيئة SkillEnsure',
+      cat_24_date: 'سبتمبر 2026',
+
+      cat_25_title: 'بناء أول نظام RAG متكامل',
+      cat_25_badge: 'بنية وهندسة RAG',
+      cat_25_source: 'منصة Analytics Vidhya',
+      cat_25_date: '1 سبتمبر 2026',
+
+      cat_26_title: 'أنظمة RAG المحلية للمبتدئين',
+      cat_26_badge: 'أنظمة RAG محلية',
+      cat_26_source: 'أكاديمية FreeAcademy.ai',
+      cat_26_date: '1 سبتمبر 2026',
+
+      cat_27_title: 'دورة RAG التأسيسية',
+      cat_27_badge: 'تقنية RAG المعتمدة',
+      cat_27_source: 'منصة Simplilearn',
+      cat_27_date: '1 سبتمبر 2026',
+
+      cat_28_title: 'بروتوكول سياق النماذج MCP',
+      cat_28_badge: 'بروتوكول MCP الموحد',
+      cat_28_source: 'أكاديمية FreeAcademy.ai',
+      cat_28_date: '29 أغسطس 2026',
+
+      cat_29_title: 'برمجة بايثون المتقدمة',
+      cat_29_badge: 'بايثون متقدم',
+      cat_29_source: 'منصة Simplilearn',
+      cat_29_date: '9 أكتوبر 2026',
+
+      cat_30_title: 'أتمتة الذكاء الاصطناعي عبر Make و Zapier',
+      cat_30_badge: 'أتمتة Make و Zapier',
+      cat_30_source: 'أكاديمية FreeAcademy.ai',
+      cat_30_date: '27 أغسطس 2026',
+
+      cat_31_title: 'مقدمة في LangGraph للوكلاء المتعددين',
+      cat_31_badge: 'وكلاء LangGraph المتعددين',
+      cat_31_source: 'منصة Simplilearn',
+      cat_31_date: '6 سبتمبر 2026',
+
+      cat_32_title: 'أسس الذكاء الاصطناعي التطبيقي',
+      cat_32_badge: 'أكاديمية OpenAI',
+      cat_32_source: 'أكاديمية OpenAI',
+      cat_32_date: '24 أغسطس 2026',
+
+      cat_33_title: 'أسس الذكاء الاصطناعي',
+      cat_33_badge: 'أكاديمية OpenAI',
+      cat_33_source: 'أكاديمية OpenAI',
+      cat_33_date: '23 أغسطس 2026',
+
+      cat_34_title: 'الحوسبة العلمية باستخدام NumPy',
+      cat_34_badge: 'حوسبة علمية عبر NumPy',
+      cat_34_source: 'أكاديمية CadetX',
+      cat_34_date: '10 أكتوبر 2026',
+
+      cat_35_title: 'ردم فجوة قيمة الذكاء الاصطناعي من المساعدين إلى الأتمتة الوكيلة',
+      cat_35_badge: 'أتمتة الأنظمة الوكيلة',
+      cat_35_source: 'أكاديمية Agent Academy.ai',
+      cat_35_date: '23 أغسطس 2026',
+
+      cat_36_title: 'فهم واستيعاب الذكاء الاصطناعي الوكيل',
+      cat_36_badge: 'الذكاء الاصطناعي الوكيل',
+      cat_36_source: 'أكاديمية Agent Academy.ai',
+      cat_36_date: '21 أغسطس 2026',
+
+      cat_37_title: 'تطوير البرمجيات بالذكاء الاصطناعي التوليدي',
+      cat_37_badge: 'تطوير البرمجيات بالذكاء الاصطناعي',
+      cat_37_source: 'منصة Simplilearn',
+      cat_37_date: '17 أغسطس 2026',
+
+      cat_38_title: 'دورة n8n السريعة – أتمتة تدفقات العمل',
+      cat_38_badge: 'أكاديمية n8n',
+      cat_38_source: 'أكاديمية n8n',
+      cat_38_date: '18 أغسطس 2026',
+
+      cat_39_title: 'شهادة إنفوغرافيا وتصميم رقمي',
+      cat_39_badge: 'أكاديمية ATF ميديا',
+      cat_39_source: 'أكاديمية ATF ميديا',
+      cat_39_date: '16 نوفمبر 2024',
+
+      cat_40_title: 'دبلوم مبرمج على الواب (405 ساعات)',
+      cat_40_badge: 'معهد H2iT الجزائر',
+      cat_40_source: 'المعهد العالي لإعلام الآلي والتكنولوجيا H2iT',
+      cat_40_date: '25 فبراير 2024',
+
+      cat_41_title: 'تركيب وصيانة الأنظمة الكهروضوئية المستقلة',
+      cat_41_badge: 'معهد IFEG سونلغاز',
+      cat_41_source: 'معهد تكوين الكهرباء والغاز IFEG • المدرسة التقنية بالبليدة',
+      cat_41_date: '30 ديسمبر 2021',
+
+      cat_42_title: 'هندسة البرمجيات مع الرسوم البيانية المعرفية ونظام RAG',
+      cat_42_badge: 'رسوم المعرفة وRAG',
+      cat_42_source: 'سيمبلي ليرن SkillUp • فوجيتسو',
+      cat_42_date: '19 أغسطس 2026',
+
+      cat_43_title: 'العمل بذكاء أكبر باستخدام الذكاء الاصطناعي',
+      cat_43_badge: 'مدرسة كانفا للتصميم',
+      cat_43_source: 'مدرسة كانفا للتصميم',
+      cat_43_date: '16 أغسطس 2026',
+
 
       // Services Header
       services_eyebrow: 'الخبرات والحلول الأساسية',
@@ -924,6 +1800,33 @@
     shortSpans.forEach(function (s) {
       s.textContent = dict.lang_code;
     });
+
+    // Update SEO meta descriptions and Open Graph dynamically
+    var metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc && dict.about_desc) {
+      metaDesc.setAttribute('content', dict.about_desc);
+    }
+    var ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc && dict.about_desc) {
+      ogDesc.setAttribute('content', dict.about_desc);
+    }
+    var twDesc = document.querySelector('meta[name="twitter:description"]');
+    if (twDesc && dict.about_desc) {
+      twDesc.setAttribute('content', dict.about_desc);
+    }
+
+    // Sync URL with language parameter without reloading
+    try {
+      if (window.history && window.history.replaceState) {
+        var currentUrl = new URL(window.location.href);
+        if (lang === 'en') {
+          currentUrl.searchParams.delete('lang');
+        } else {
+          currentUrl.searchParams.set('lang', lang);
+        }
+        window.history.replaceState({}, '', currentUrl.toString());
+      }
+    } catch (e) {}
 
     // 3. Update Dropdown Menu and Mobile Active states
     var options = document.querySelectorAll('.lang-option');
@@ -1113,6 +2016,20 @@
     var allDipCounter = document.querySelector('.all-diplomas-counter-badge');
     if (allDipCounter) allDipCounter.textContent = dict.all_diplomas_badge;
 
+    var allDipExitBtn = document.querySelector('.all-diplomas-exit-text');
+    if (allDipExitBtn) allDipExitBtn.textContent = dict.all_diplomas_close || 'Exit';
+
+    if (typeof window.renderAllDiplomasGrid === 'function') {
+      window.renderAllDiplomasGrid(true);
+    }
+
+    var lbEl = document.getElementById('diplomaLightbox');
+    if (lbEl && lbEl.classList.contains('open') && typeof window.currentDiplomaIndex === 'number' && window.currentDiplomaIndex >= 0) {
+      if (typeof window.openDiplomaLightbox === 'function') {
+        window.openDiplomaLightbox(window.currentDiplomaIndex);
+      }
+    }
+
     // Services Header
     var srvEyebrow = document.querySelector('#services .section-eyebrow');
     if (srvEyebrow) srvEyebrow.textContent = dict.services_eyebrow;
@@ -1258,6 +2175,11 @@
 
     var gModalBadge = document.querySelector('.graphic-modal-header .service-badge');
     if (gModalBadge) gModalBadge.textContent = dict.graphic_modal_badge;
+
+    var gModalEl = document.getElementById('graphicDesignsModal');
+    if (gModalEl && gModalEl.classList.contains('open') && typeof window.openGraphicDesignsModal === 'function') {
+      window.openGraphicDesignsModal();
+    }
 
     var gModalTitle = document.querySelector('.graphic-modal-title');
     if (gModalTitle) gModalTitle.textContent = dict.graphic_modal_title;
@@ -1582,7 +2504,13 @@
     setupLanguageSwitcher();
     var savedLang = 'en';
     try {
-      savedLang = localStorage.getItem('portfolio_language') || 'en';
+      var urlParams = new URLSearchParams(window.location.search);
+      var paramLang = urlParams.get('lang');
+      if (paramLang && translations[paramLang.toLowerCase()]) {
+        savedLang = paramLang.toLowerCase();
+      } else {
+        savedLang = localStorage.getItem('portfolio_language') || 'en';
+      }
     } catch (e) {
       savedLang = 'en';
     }
