@@ -1,6 +1,3 @@
-# Robots.txt for Hichem Bendali Portfolio
 User-agent: *
 Allow: /
-
-# Sitemaps
-Sitemap: https://hichembendali.vercel.app/sitemap.xml
+Sitemap: https://hichem-bendali-portfolio.vercel.app/sitemap.xml
