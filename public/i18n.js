@@ -2020,7 +2020,9 @@
     if (allDipExitBtn) allDipExitBtn.textContent = dict.all_diplomas_close || 'Exit';
 
     if (typeof window.renderAllDiplomasGrid === 'function') {
-      window.renderAllDiplomasGrid(true);
+      try {
+        window.renderAllDiplomasGrid(true);
+      } catch (e) {}
     }
 
     var lbEl = document.getElementById('diplomaLightbox');

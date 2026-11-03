@@ -286,8 +286,31 @@
 
     * { box-sizing: border-box; }
 
+    /* Instant touch responsiveness - eliminate 300ms mobile tap delay */
+    a, button, input, textarea, select,
+    .nav-btn, .btn-primary, .btn-secondary, .btn-ghost,
+    .design-card-item, .project-card, .diploma-card, .mini-diploma-card,
+    .lang-dropdown-btn, .mobile-lang-chip, .lang-option,
+    .btn-show-all-designs, .btn-show-all-diplomas, .btn-show-all-projects,
+    .diploma-btn-expand, .lightbox-btn, .all-diplomas-close-btn {
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
     html {
       scroll-behavior: smooth;
+    }
+
+    /* Hardware compositing for smooth 60-120fps scrolling */
+    .main-nav {
+      transform: translateZ(0);
+      will-change: transform, background-color, border-color;
+    }
+
+    /* Content-visibility optimization to skip offscreen layout during fast scrolls */
+    #about, #services, #projects, #location, #contact {
+      content-visibility: auto;
+      contain-intrinsic-size: 800px;
     }
 
     html, body {
@@ -3207,9 +3230,84 @@
       }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
+      .graphic-modal-backdrop {
+        padding: 10px 8px;
+        -webkit-backdrop-filter: blur(14px);
+        backdrop-filter: blur(14px);
+      }
+      .graphic-modal-window {
+        max-height: 94vh;
+        border-radius: 18px;
+        width: 100%;
+      }
+      .graphic-modal-header {
+        padding: 14px 16px;
+        gap: 12px;
+      }
+      .graphic-modal-title {
+        font-size: 17px;
+        margin-bottom: 4px;
+      }
+      .graphic-modal-desc {
+        font-size: 12.5px;
+        line-height: 1.4;
+      }
+      .graphic-modal-body {
+        padding: 12px 10px;
+      }
       .graphic-modal-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      /* Ensure picture is prominently visible and not obscured by text or dark card layers */
+      .graphic-modal-grid .design-card-item {
+        border-radius: 14px;
+        border: 1px solid rgba(236, 72, 153, 0.35);
+        background: rgba(18, 14, 24, 0.94);
+        overflow: hidden;
+      }
+      .graphic-modal-grid .design-thumb-box {
+        height: auto;
+        min-height: 250px;
+        max-height: 380px;
+        aspect-ratio: 4 / 3;
+        padding: 10px;
+        background: radial-gradient(circle at 50% 35%, rgba(28, 20, 34, 0.98) 0%, rgba(9, 7, 15, 0.98) 100%);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .graphic-modal-grid .design-thumb-img {
+        width: 100%;
+        height: 100%;
+        max-height: 360px;
+        object-fit: contain;
+        object-position: center;
+        border-radius: 8px;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+        display: block;
+      }
+      /* Disable sticky dark hover zoom overlay on mobile touch screens so picture remains 100% visible */
+      .graphic-modal-grid .design-zoom-overlay {
+        display: none !important;
+      }
+      .graphic-modal-grid .design-card-footer {
+        padding: 12px 14px;
+        gap: 6px;
+        background: rgba(14, 11, 18, 0.98);
+      }
+      .graphic-modal-grid .design-card-title {
+        font-size: 14.5px;
+        line-height: 1.35;
+        color: #fff;
+        margin: 0;
+      }
+      .graphic-modal-grid .tool-badge-pill {
+        font-size: 11px;
+        padding: 3px 8px;
+      }
+      .graphic-modal-footer {
+        padding: 10px 16px;
+        font-size: 12px;
       }
     }
 
@@ -6858,34 +6956,51 @@
         });
       });
 
-      // Scroll effect on Navbar (subtle transparent backdrop-filter on scroll)
-      window.addEventListener('scroll', function(){
-        if (window.scrollY > 30) {
-          mainNav.classList.add('scrolled');
-        } else {
-          mainNav.classList.remove('scrolled');
-        }
-      });
-
-      // Active nav button highlight tracking
+      // Optimized high-performance RAF-throttled scroll handler (passive: true)
+      var scrollTicking = false;
+      var cachedSections = [];
       var sectionIds = ['home', 'about', 'services', 'projects', 'location', 'contact'];
-      window.addEventListener('scroll', function(){
-        var scrollPos = window.scrollY + 180;
-        sectionIds.forEach(function(id){
+      function cacheSectionPositions() {
+        cachedSections = sectionIds.map(function(id) {
           var el = document.getElementById(id);
-          if (!el) return;
-          var top = el.offsetTop;
-          var height = el.offsetHeight;
-          if (scrollPos >= top && scrollPos < top + height) {
-            document.querySelectorAll('.nav-btn').forEach(function(b){
-              b.classList.remove('active');
-              if (b.getAttribute('href') === '#' + id) {
-                b.classList.add('active');
+          return el ? { id: id, top: el.offsetTop, height: el.offsetHeight } : null;
+        }).filter(Boolean);
+      }
+      cacheSectionPositions();
+      window.addEventListener('resize', cacheSectionPositions, { passive: true });
+
+      window.addEventListener('scroll', function() {
+        if (!scrollTicking) {
+          window.requestAnimationFrame(function() {
+            var scrollY = window.scrollY;
+            // 1. Navbar transparent backdrop
+            if (scrollY > 30) {
+              mainNav.classList.add('scrolled');
+            } else {
+              mainNav.classList.remove('scrolled');
+            }
+            // 2. Active nav highlight
+            var scrollPos = scrollY + 180;
+            for (var i = 0; i < cachedSections.length; i++) {
+              var s = cachedSections[i];
+              if (scrollPos >= s.top && scrollPos < s.top + s.height) {
+                var navButtons = document.querySelectorAll('.nav-btn');
+                for (var j = 0; j < navButtons.length; j++) {
+                  var b = navButtons[j];
+                  if (b.getAttribute('href') === '#' + s.id) {
+                    b.classList.add('active');
+                  } else {
+                    b.classList.remove('active');
+                  }
+                }
+                break;
               }
-            });
-          }
-        });
-      });
+            }
+            scrollTicking = false;
+          });
+          scrollTicking = true;
+        }
+      }, { passive: true });
 
       // Filter tabs in projects
       var filterBtns = document.querySelectorAll('.filter-btn');
@@ -7548,6 +7663,7 @@
       }
 
     ];
+    window.diplomasData = diplomasData;
 
     var currentDiplomaIndex = 0;
     var allDiplomasRendered = false;
@@ -7555,12 +7671,13 @@
     function renderAllDiplomasGrid(force) {
       if (allDiplomasRendered && !force) return;
       var grid = document.getElementById('allDiplomasScrollGrid');
-      if (!grid) return;
+      var data = (typeof diplomasData !== 'undefined' && diplomasData) || window.diplomasData;
+      if (!grid || !data || typeof data.slice !== 'function') return;
 
       var currentLang = (window.getCurrentLanguage && window.getCurrentLanguage()) || 'en';
       var dict = (window.getTranslations && window.getTranslations()[currentLang]) || {};
 
-      var catalogItems = diplomasData.slice(4);
+      var catalogItems = data.slice(4);
       var html = '';
       catalogItems.forEach(function(item, i) {
         var globalIdx = 4 + i;
