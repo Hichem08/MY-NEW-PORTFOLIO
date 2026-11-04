@@ -68,6 +68,7 @@
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link rel="preload" as="image" href="/assets/aistudio/WhatsApp_Image_2026-10-27_at_15.59.32_0c2db557.jpeg" fetchpriority="high">
+  <link rel="preload" as="image" href="/assets/video/earth-poster.webp" type="image/webp" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Structured Data: Schema.org JSON-LD Graph -->
@@ -331,17 +332,20 @@
       line-height: 1.5;
     }
 
-    /* Fixed Dual-Video Background */
+    /* Fixed Earth Video Background (GPU-Accelerated) */
     .bg {
       position: fixed;
       left: 50%;
       top: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate3d(-50%, -50%, 0);
+      -webkit-transform: translate3d(-50%, -50%, 0);
       width: max(100vw, calc(100dvh * 1.6));
       height: max(62.5vw, 100dvh);
       background-color: #000;
       z-index: 0;
       pointer-events: none;
+      will-change: transform;
+      contain: strict;
     }
 
     @supports not (height: 100dvh) {
@@ -361,8 +365,10 @@
       display: block;
       background-color: #000;
       pointer-events: none;
-      opacity: 0;
-      transition: opacity .9s linear;
+      opacity: 1;
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+      will-change: transform;
     }
 
     .bg-video.is-active {
@@ -5048,13 +5054,11 @@
   </script>
 </head>
 <body>
-  <!-- DUAL VIDEO FIXED BACKGROUND -->
+  <!-- HARDWARE-ACCELERATED SEAMLESS EARTH VIDEO BACKGROUND -->
   <div class="bg" role="img" aria-label="Stylised globe of Earth rendered as a purple dot matrix against a starfield, slowly rotating">
-    <video class="bg-video is-active" id="bgVideoA" autoplay muted loop playsinline preload="auto" disablepictureinpicture aria-hidden="true" poster="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/82e7eb75-c65f-490a-99b5-f3d1cad54200.webp">
-      <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260912_104036_bd6924f6-3c8e-417e-8465-6d03c8c2e9e6.mp4" type="video/mp4">
-    </video>
-    <video class="bg-video" id="bgVideoB" muted loop playsinline preload="auto" disablepictureinpicture aria-hidden="true" poster="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/82e7eb75-c65f-490a-99b5-f3d1cad54200.webp">
-      <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260912_104036_bd6924f6-3c8e-417e-8465-6d03c8c2e9e6.mp4" type="video/mp4">
+    <video class="bg-video is-active" id="bgVideo" autoplay muted loop playsinline preload="auto" disablepictureinpicture aria-hidden="true" poster="/assets/video/earth-poster.webp">
+      <source media="(max-width: 768px)" src="/assets/video/earth-seamless-mobile.mp4" type="video/mp4">
+      <source src="/assets/video/earth-seamless.mp4" type="video/mp4">
     </video>
   </div>
   <div class="bg-scrim"></div>
@@ -5349,7 +5353,7 @@
         <div>
           <h3>Full Stack Developer &bull; AI Engineer &bull; Digital Designer</h3>
           <p>
-            I am Hichem Bendali, a versatile software engineer and digital designer based in Algeria. With demonstrated expertise in building scalable, innovative solutions, I specialize in Generative AI, agentic systems, and automation workflows.
+            Official portfolio of Hichem Bendali, a versatile AI Engineer | Full Stack Developer and digital designer based in Algeria. With demonstrated expertise in building scalable, innovative solutions, I specialize in Generative AI, agentic systems, automation workflows, AI and modern web technologies.
           </p>
           <p>
             My work spans architecting and deploying production-ready solutions, including Local RAG systems, responsive web applications, and cross-platform mobile apps. Holding a strong foundation in prompt engineering, LLM integration, and over <strong>+40 Professional Certifications</strong>, I am fluent in English, French, and Arabic, and I am always eager to contribute to innovative projects in technology and renewable energy.
@@ -5374,6 +5378,8 @@
           src="/assets/aistudio/dev_5f645cc5.jpeg" 
           alt="Hichem Bendali coding on laptop" 
           class="about-photo-img"
+          loading="lazy"
+          decoding="async"
         />
         <div class="about-photo-overlay">
           <h4 class="about-photo-title">Hichem Bendali in Flow</h4>
@@ -5502,7 +5508,7 @@
               src="/assets/aistudio/Oracle_16b9111f.jpeg" 
               alt="Oracle Certified Foundations Associate Certificate" 
               class="diploma-thumb-img" 
-              loading="lazy"
+              loading="lazy" decoding="async"
             />
             <div class="diploma-zoom-overlay">
               <div class="diploma-zoom-icon">
@@ -5539,7 +5545,7 @@
               src="/assets/aistudio/LinkedIn-Microsoft-UNU_5f302d8d.jpeg" 
               alt="Responsible AI in a Global Context Certificate" 
               class="diploma-thumb-img" 
-              loading="lazy"
+              loading="lazy" decoding="async"
             />
             <div class="diploma-zoom-overlay">
               <div class="diploma-zoom-icon">
@@ -5576,7 +5582,7 @@
               src="/assets/aistudio/b_b33ea604.jpeg" 
               alt="Diplôme de Concepteur de Systèmes d'Information (CSI) 3iL" 
               class="diploma-thumb-img" 
-              loading="lazy"
+              loading="lazy" decoding="async"
             />
             <div class="diploma-zoom-overlay">
               <div class="diploma-zoom-icon">
@@ -5613,7 +5619,7 @@
               src="/assets/aistudio/can_3c85c94e.jpeg" 
               alt="Attestation d'études collégiales Développement Web CÉGEP" 
               class="diploma-thumb-img" 
-              loading="lazy"
+              loading="lazy" decoding="async"
             />
             <div class="diploma-zoom-overlay">
               <div class="diploma-zoom-icon">
@@ -5848,7 +5854,7 @@
                   src="/assets/aistudio/Github_dee79fbf.jpeg" 
                   alt="Hichem Bendali Full Stack Developer Terminal Showcase" 
                   class="terminal-screen-img"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                 />
                 <div class="terminal-overlay-hint">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
@@ -5933,7 +5939,7 @@
                   src="/assets/aistudio/solar2_b3fa2c77.jpeg" 
                   alt="Solar Panel Installation Array Structure" 
                   class="solar-photo-img" 
-                  loading="lazy" 
+                  loading="lazy" decoding="async" 
                 />
                 <div class="solar-photo-overlay">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
@@ -5955,7 +5961,7 @@
                   src="/assets/aistudio/solar_e87e32ae.jpeg" 
                   alt="Solar Panel Installation On-Site Team" 
                   class="solar-photo-img" 
-                  loading="lazy" 
+                  loading="lazy" decoding="async" 
                 />
                 <div class="solar-photo-overlay">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
@@ -6003,7 +6009,7 @@
                   src="/assets/aistudio/solar1_c199654c.jpeg" 
                   alt="Solar Inverter and Maintenance Control Box" 
                   class="solar-photo-img" 
-                  loading="lazy" 
+                  loading="lazy" decoding="async" 
                 />
                 <div class="solar-photo-overlay">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
@@ -6070,7 +6076,7 @@
             title="Click to view full image"
           >
             <div class="design-thumb-box">
-              <img src="/assets/aistudio/ARoma-coffee2_74f8ed3b.png" alt="ARoma Coffee Product Poster" class="design-thumb-img" loading="lazy" />
+              <img src="/assets/aistudio/ARoma-coffee2_74f8ed3b.png" alt="ARoma Coffee Product Poster" class="design-thumb-img" loading="lazy" decoding="async" />
               <div class="design-zoom-overlay">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
                 <span>Click to Enlarge</span>
@@ -6091,7 +6097,7 @@
             title="Click to view full image"
           >
             <div class="design-thumb-box">
-              <img src="/assets/aistudio/Carte-Visite_a960bcd9.png" alt="Executive Business Card Design" class="design-thumb-img" loading="lazy" />
+              <img src="/assets/aistudio/Carte-Visite_a960bcd9.png" alt="Executive Business Card Design" class="design-thumb-img" loading="lazy" decoding="async" />
               <div class="design-zoom-overlay">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
                 <span>Click to Enlarge</span>
@@ -6112,7 +6118,7 @@
             title="Click to view full image"
           >
             <div class="design-thumb-box">
-              <img src="/assets/aistudio/Venus_shower_gel_product_poster_8d550fb5.png" alt="Venus Shower Gel Product Poster" class="design-thumb-img" loading="lazy" />
+              <img src="/assets/aistudio/Venus_shower_gel_product_poster_8d550fb5.png" alt="Venus Shower Gel Product Poster" class="design-thumb-img" loading="lazy" decoding="async" />
               <div class="design-zoom-overlay">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
                 <span>Click to Enlarge</span>
@@ -6133,7 +6139,7 @@
             title="Click to view full image"
           >
             <div class="design-thumb-box">
-              <img src="/assets/aistudio/YSL_MYSELF_perfume_product_post_ad03a3bb.png" alt="YSL MYSELF Perfume Product Post" class="design-thumb-img" loading="lazy" />
+              <img src="/assets/aistudio/YSL_MYSELF_perfume_product_post_ad03a3bb.png" alt="YSL MYSELF Perfume Product Post" class="design-thumb-img" loading="lazy" decoding="async" />
               <div class="design-zoom-overlay">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
                 <span>Click to Enlarge</span>
@@ -6154,7 +6160,7 @@
             title="Click to view full image"
           >
             <div class="design-thumb-box">
-              <img src="/assets/aistudio/HICHEM-E-Book_4a37b3b7.png" alt="Next Stop The Top E-Book Cover" class="design-thumb-img" loading="lazy" />
+              <img src="/assets/aistudio/HICHEM-E-Book_4a37b3b7.png" alt="Next Stop The Top E-Book Cover" class="design-thumb-img" loading="lazy" decoding="async" />
               <div class="design-zoom-overlay">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
                 <span>Click to Enlarge</span>
@@ -6175,7 +6181,7 @@
             title="Click to view full image"
           >
             <div class="design-thumb-box">
-              <img src="/assets/aistudio/Cours_43850e44.jpg" alt="Cours Particulier Social Media Design" class="design-thumb-img" loading="lazy" />
+              <img src="/assets/aistudio/Cours_43850e44.jpg" alt="Cours Particulier Social Media Design" class="design-thumb-img" loading="lazy" decoding="async" />
               <div class="design-zoom-overlay">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
                 <span>Click to Enlarge</span>
@@ -6209,7 +6215,7 @@
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="4"/></svg>
                 Autonomous AI Systems
               </span>
-              <img src="/assets/aistudio/AI_893d4ecf.jpeg" alt="AI Engineer Building Intelligent Solutions" class="ai-photo-img" loading="lazy" />
+              <img src="/assets/aistudio/AI_893d4ecf.jpeg" alt="AI Engineer Building Intelligent Solutions" class="ai-photo-img" loading="lazy" decoding="async" />
               <div class="ai-photo-overlay">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
                 <span>Click to Expand Blueprint</span>
@@ -6338,7 +6344,7 @@
       <!-- Project 1: SONELGAZ Payment APP -->
       <article class="project-card" id="projectCard1" data-current-idx="0" data-images='["/assets/aistudio/payapp1_ee0dad9e.png", "/assets/aistudio/payapp2_6152dd0a.png"]' data-title="SONELGAZ Payment APP" data-subtitle="MERN Stack • React Native, Node.js, Express, MongoDB">
         <div class="project-media-wrap" onclick="openProjectImage('projectCard1')">
-          <img src="/assets/aistudio/payapp1_ee0dad9e.png" alt="SONELGAZ Payment APP" class="project-slide-img" loading="lazy" />
+          <img src="/assets/aistudio/payapp1_ee0dad9e.png" alt="SONELGAZ Payment APP" class="project-slide-img" loading="lazy" decoding="async" />
           <button type="button" class="project-slider-btn project-slider-prev" onclick="switchProjectSlide('projectCard1', -1, event)" aria-label="Previous image" title="Previous preview">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
           </button>
@@ -6384,7 +6390,7 @@
       <!-- Project 2: Furniture Showroom -->
       <article class="project-card" id="projectCard2" data-current-idx="0" data-images='["/assets/aistudio/furniture1_0ece5b15.png", "/assets/aistudio/furniture2_f16a458e.png"]' data-title="Furniture Showroom" data-subtitle="HTML, CSS, JavaScript • E-Commerce & Interior Living">
         <div class="project-media-wrap" onclick="openProjectImage('projectCard2')">
-          <img src="/assets/aistudio/furniture1_0ece5b15.png" alt="Furniture Showroom" class="project-slide-img" loading="lazy" />
+          <img src="/assets/aistudio/furniture1_0ece5b15.png" alt="Furniture Showroom" class="project-slide-img" loading="lazy" decoding="async" />
           <button type="button" class="project-slider-btn project-slider-prev" onclick="switchProjectSlide('projectCard2', -1, event)" aria-label="Previous image" title="Previous preview">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
           </button>
@@ -6425,7 +6431,7 @@
       <!-- Project 3: SONELGAZ Dashboard -->
       <article class="project-card" id="projectCard3" data-current-idx="0" data-images='["/assets/aistudio/dash1_8ca92373.png", "/assets/aistudio/dash2_1657049a.png"]' data-title="SONELGAZ Dashboard" data-subtitle="React JS, Vite, TailwindCSS, MySQL • Admin Intelligence">
         <div class="project-media-wrap" onclick="openProjectImage('projectCard3')">
-          <img src="/assets/aistudio/dash1_8ca92373.png" alt="SONELGAZ Dashboard" class="project-slide-img" loading="lazy" />
+          <img src="/assets/aistudio/dash1_8ca92373.png" alt="SONELGAZ Dashboard" class="project-slide-img" loading="lazy" decoding="async" />
           <button type="button" class="project-slider-btn project-slider-prev" onclick="switchProjectSlide('projectCard3', -1, event)" aria-label="Previous image" title="Previous preview">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
           </button>
@@ -6470,7 +6476,7 @@
       <!-- Project 4: Kitchen Showroom -->
       <article class="project-card" id="projectCard4" data-current-idx="0" data-images='["/assets/aistudio/kitchen1_bf78350e.png", "/assets/aistudio/kitchen2_579915d7.png"]' data-title="Kitchen Showroom" data-subtitle="HTML, CSS, JavaScript • Luxury Architectural Showcase">
         <div class="project-media-wrap" onclick="openProjectImage('projectCard4')">
-          <img src="/assets/aistudio/kitchen1_bf78350e.png" alt="Kitchen Showroom" class="project-slide-img" loading="lazy" />
+          <img src="/assets/aistudio/kitchen1_bf78350e.png" alt="Kitchen Showroom" class="project-slide-img" loading="lazy" decoding="async" />
           <button type="button" class="project-slider-btn project-slider-prev" onclick="switchProjectSlide('projectCard4', -1, event)" aria-label="Previous image" title="Previous preview">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
           </button>
@@ -6511,7 +6517,7 @@
       <!-- Project 5: Weather App -->
       <article class="project-card" id="projectCard5" data-current-idx="0" data-images='["/assets/aistudio/Weather_469bdbf0.jpeg"]' data-title="Weather App" data-subtitle="Python, React Native, TailwindCSS • Meteorological Intelligence">
         <div class="project-media-wrap" onclick="openProjectImage('projectCard5')">
-          <img src="/assets/aistudio/Weather_469bdbf0.jpeg" alt="Weather App" class="project-slide-img" loading="lazy" />
+          <img src="/assets/aistudio/Weather_469bdbf0.jpeg" alt="Weather App" class="project-slide-img" loading="lazy" decoding="async" />
           <span class="project-slide-indicator">
             <span class="slide-count">1 / 1</span>
           </span>
@@ -6546,7 +6552,7 @@
       <!-- Project 6: Construction Equipment Rental -->
       <article class="project-card" id="projectCard6" data-current-idx="0" data-images='["/assets/aistudio/construction1_61c0d80f.png", "/assets/aistudio/construction2_8027a0a4.png"]' data-title="Construction Equipment Rental" data-subtitle="ReactJS, CSS • Heavy Equipment Fleet Booking Portal">
         <div class="project-media-wrap" onclick="openProjectImage('projectCard6')">
-          <img src="/assets/aistudio/construction1_61c0d80f.png" alt="Construction Equipment Rental" class="project-slide-img" loading="lazy" />
+          <img src="/assets/aistudio/construction1_61c0d80f.png" alt="Construction Equipment Rental" class="project-slide-img" loading="lazy" decoding="async" />
           <button type="button" class="project-slider-btn project-slider-prev" onclick="switchProjectSlide('projectCard6', -1, event)" aria-label="Previous image" title="Previous preview">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
           </button>
@@ -6962,11 +6968,13 @@
       var scrollTicking = false;
       var cachedSections = [];
       var sectionIds = ['home', 'about', 'services', 'projects', 'location', 'contact'];
+      var navButtons = document.querySelectorAll('.nav-btn');
       function cacheSectionPositions() {
         cachedSections = sectionIds.map(function(id) {
           var el = document.getElementById(id);
           return el ? { id: id, top: el.offsetTop, height: el.offsetHeight } : null;
         }).filter(Boolean);
+        navButtons = document.querySelectorAll('.nav-btn');
       }
       cacheSectionPositions();
       window.addEventListener('resize', cacheSectionPositions, { passive: true });
@@ -6986,7 +6994,6 @@
             for (var i = 0; i < cachedSections.length; i++) {
               var s = cachedSections[i];
               if (scrollPos >= s.top && scrollPos < s.top + s.height) {
-                var navButtons = document.querySelectorAll('.nav-btn');
                 for (var j = 0; j < navButtons.length; j++) {
                   var b = navButtons[j];
                   if (b.getAttribute('href') === '#' + s.id) {
@@ -8195,64 +8202,32 @@
     });
   </script>
 
-  <!-- BACKGROUND VIDEO LOOPING SCRIPT (LAST element in <body>) -->
+  <!-- BACKGROUND VIDEO PLAYBACK HANDLER (LIGHTWEIGHT & HARDWARE-ACCELERATED) -->
   <script>
     (function(){
-      var vidA = document.getElementById('bgVideoA');
-      var vidB = document.getElementById('bgVideoB');
-      if (!vidA || !vidB) return;
+      var vid = document.getElementById('bgVideo') || document.getElementById('bgVideoA');
+      if (!vid) return;
 
       if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        vidA.removeAttribute('autoplay');
+        vid.removeAttribute('autoplay');
         try {
-          vidA.pause();
-          vidB.pause();
-          vidA.currentTime = 0;
+          vid.pause();
         } catch (err) {}
         return;
       }
 
-      var FADE = 0.9;
-      var cur = vidA;
-      var nxt = vidB;
-      var swapping = false;
-
-      function play(v) {
-        if (!v) return;
-        var p = v.play();
-        if (p && typeof p.catch === 'function') {
-          p.catch(function(){});
+      function ensurePlay() {
+        if (vid && vid.paused) {
+          var p = vid.play();
+          if (p && typeof p.catch === 'function') {
+            p.catch(function(){});
+          }
         }
       }
 
-      play(vidA);
-
-      function tick() {
-        if (swapping || !cur.duration) return;
-        if (cur.duration - cur.currentTime > FADE) return;
-
-        swapping = true;
-        var out = cur;
-        nxt.currentTime = 0;
-        play(nxt);
-        nxt.classList.add('is-active');
-        out.classList.remove('is-active');
-
-        var temp = cur;
-        cur = nxt;
-        nxt = temp;
-
-        setTimeout(function(){
-          try {
-            out.pause();
-            out.currentTime = 0;
-          } catch(e) {}
-          swapping = false;
-        }, (FADE * 1000) + 100);
-      }
-
-      vidA.addEventListener('timeupdate', tick);
-      vidB.addEventListener('timeupdate', tick);
+      ensurePlay();
+      document.addEventListener('touchstart', ensurePlay, { once: true, passive: true });
+      document.addEventListener('scroll', ensurePlay, { once: true, passive: true });
     })();
   </script>
 </body>
